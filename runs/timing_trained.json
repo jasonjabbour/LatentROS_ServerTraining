@@ -1,0 +1,317 @@
+{
+  "runs": [
+    {
+      "model": "v4",
+      "random_weights": false,
+      "seed": 42,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "torch": "2.5.1+cu121",
+      "cuda": "12.1",
+      "cudnn": 90100,
+      "cpu_threads": 8,
+      "compile": true,
+      "dynamic": false,
+      "fp16": true,
+      "strip_rows": 0,
+      "depth": 3,
+      "warmups": 10,
+      "repeats": 20,
+      "sources": {
+        "multimodal_ae.py": "3778568cf2f28f26acd628c33e8a5cb2b4f118a147e676bea6093397e3c2856a",
+        "encoder_best_MMV4.pth": "748a762c7147d16740a0a698c9db9cb9d17832514ef183d0610fec7480b6d9e1",
+        "decoder_best_MMV4.pth": "81521d7543cf28bfa29dc460c6caaa0d911ae9c377f665a3473ef81b3b32bf74"
+      },
+      "cases": [
+        {
+          "shape": [
+            2560,
+            1920
+          ],
+          "native_bytes": 4915200,
+          "input_sha256": "af594308b9be7f2ec209f8c0787e90c4b959a4f4299d1b2f2aa30be64188c76a",
+          "samples": [
+            {
+              "encode_ms": 9.321406949311495,
+              "decode_ms": 2.429602900519967,
+              "total_ms": 11.751009849831462,
+              "decoder_gpu_resident_ms": 0.6242198869585991
+            },
+            {
+              "encode_ms": 9.320304030552506,
+              "decode_ms": 0.8255371358245611,
+              "total_ms": 10.145841166377068,
+              "decoder_gpu_resident_ms": 0.3687699791043997
+            },
+            {
+              "encode_ms": 9.327250067144632,
+              "decode_ms": 0.8285290095955133,
+              "total_ms": 10.155779076740146,
+              "decoder_gpu_resident_ms": 0.3047650679945946
+            },
+            {
+              "encode_ms": 9.310056921094656,
+              "decode_ms": 0.8360419888049364,
+              "total_ms": 10.146098909899592,
+              "decoder_gpu_resident_ms": 0.30670897103846073
+            },
+            {
+              "encode_ms": 9.310571011155844,
+              "decode_ms": 0.8256870787590742,
+              "total_ms": 10.136258089914918,
+              "decoder_gpu_resident_ms": 0.2979370765388012
+            },
+            {
+              "encode_ms": 9.321922902017832,
+              "decode_ms": 0.8362031076103449,
+              "total_ms": 10.158126009628177,
+              "decoder_gpu_resident_ms": 0.2908371388912201
+            },
+            {
+              "encode_ms": 9.300820995122194,
+              "decode_ms": 0.8308219257742167,
+              "total_ms": 10.131642920896411,
+              "decoder_gpu_resident_ms": 0.3025270998477936
+            },
+            {
+              "encode_ms": 9.318957105278969,
+              "decode_ms": 0.8419619407504797,
+              "total_ms": 10.160919046029449,
+              "decoder_gpu_resident_ms": 0.2901379484683275
+            },
+            {
+              "encode_ms": 9.367015911266208,
+              "decode_ms": 0.868896022439003,
+              "total_ms": 10.23591193370521,
+              "decoder_gpu_resident_ms": 0.2853281330317259
+            },
+            {
+              "encode_ms": 9.37010906636715,
+              "decode_ms": 0.8578049018979073,
+              "total_ms": 10.227913968265057,
+              "decoder_gpu_resident_ms": 0.2988658379763365
+            },
+            {
+              "encode_ms": 9.352188091725111,
+              "decode_ms": 0.8318540640175343,
+              "total_ms": 10.184042155742645,
+              "decoder_gpu_resident_ms": 0.2904660068452358
+            },
+            {
+              "encode_ms": 9.325477993115783,
+              "decode_ms": 0.8322559297084808,
+              "total_ms": 10.157733922824264,
+              "decoder_gpu_resident_ms": 0.28865598142147064
+            },
+            {
+              "encode_ms": 9.307973086833954,
+              "decode_ms": 0.8268989622592926,
+              "total_ms": 10.134872049093246,
+              "decoder_gpu_resident_ms": 0.2959559205919504
+            },
+            {
+              "encode_ms": 9.317365009337664,
+              "decode_ms": 0.8236460853368044,
+              "total_ms": 10.141011094674468,
+              "decoder_gpu_resident_ms": 0.28983596712350845
+            },
+            {
+              "encode_ms": 9.307035943493247,
+              "decode_ms": 0.8421309757977724,
+              "total_ms": 10.14916691929102,
+              "decoder_gpu_resident_ms": 0.28702709823846817
+            },
+            {
+              "encode_ms": 9.304343955591321,
+              "decode_ms": 0.8400131482630968,
+              "total_ms": 10.144357103854418,
+              "decoder_gpu_resident_ms": 0.28501590713858604
+            },
+            {
+              "encode_ms": 9.31505998596549,
+              "decode_ms": 0.9063589386641979,
+              "total_ms": 10.221418924629688,
+              "decoder_gpu_resident_ms": 0.2951091155409813
+            },
+            {
+              "encode_ms": 9.311146102845669,
+              "decode_ms": 0.8286978118121624,
+              "total_ms": 10.139843914657831,
+              "decoder_gpu_resident_ms": 0.28456305153667927
+            },
+            {
+              "encode_ms": 9.298349963501096,
+              "decode_ms": 0.8233431726694107,
+              "total_ms": 10.121693136170506,
+              "decoder_gpu_resident_ms": 0.28256792575120926
+            },
+            {
+              "encode_ms": 9.321930119767785,
+              "decode_ms": 0.8353930898010731,
+              "total_ms": 10.157323209568858,
+              "decoder_gpu_resident_ms": 0.29352912679314613
+            }
+          ],
+          "peak_allocated_bytes": 90407424,
+          "latent_bytes": 153600,
+          "p50_ms": {
+            "encode_ms": 9.318161057308316,
+            "decode_ms": 0.833824509754777,
+            "total_ms": 10.152472998015583,
+            "decoder_gpu_resident_ms": 0.2921831328421831
+          },
+          "p95_ms": {
+            "encode_ms": 9.367170569021255,
+            "decode_ms": 0.9825211367569875,
+            "total_ms": 10.311666829511525,
+            "decoder_gpu_resident_ms": 0.3815424744971098
+          }
+        },
+        {
+          "shape": [
+            5120,
+            3840
+          ],
+          "native_bytes": 19660800,
+          "input_sha256": "6b4191153819582b39d36a3e8c8e2f887503f46c995aebd6845fbb6eafd04137",
+          "samples": [
+            {
+              "encode_ms": 36.32503212429583,
+              "decode_ms": 2.1690488792955875,
+              "total_ms": 38.49408100359142,
+              "decoder_gpu_resident_ms": 0.39013312198221684
+            },
+            {
+              "encode_ms": 36.341348895803094,
+              "decode_ms": 2.1633219439536333,
+              "total_ms": 38.50467083975673,
+              "decoder_gpu_resident_ms": 0.3648879937827587
+            },
+            {
+              "encode_ms": 36.31601016968489,
+              "decode_ms": 2.18563387170434,
+              "total_ms": 38.50164404138923,
+              "decoder_gpu_resident_ms": 0.348587054759264
+            },
+            {
+              "encode_ms": 36.33016790263355,
+              "decode_ms": 2.1613501012325287,
+              "total_ms": 38.49151800386608,
+              "decoder_gpu_resident_ms": 0.34866202622652054
+            },
+            {
+              "encode_ms": 36.325922003015876,
+              "decode_ms": 2.1862380672246218,
+              "total_ms": 38.5121600702405,
+              "decoder_gpu_resident_ms": 0.356500968337059
+            },
+            {
+              "encode_ms": 36.333332071080804,
+              "decode_ms": 2.1656889002770185,
+              "total_ms": 38.49902097135782,
+              "decoder_gpu_resident_ms": 0.3471991512924433
+            },
+            {
+              "encode_ms": 36.33307293057442,
+              "decode_ms": 2.182154916226864,
+              "total_ms": 38.51522784680128,
+              "decoder_gpu_resident_ms": 0.3505891654640436
+            },
+            {
+              "encode_ms": 36.32233198732138,
+              "decode_ms": 2.1628818940371275,
+              "total_ms": 38.485213881358504,
+              "decoder_gpu_resident_ms": 0.3554390277713537
+            },
+            {
+              "encode_ms": 36.32638999260962,
+              "decode_ms": 2.181386109441519,
+              "total_ms": 38.50777610205114,
+              "decoder_gpu_resident_ms": 0.3473458345979452
+            },
+            {
+              "encode_ms": 36.33347898721695,
+              "decode_ms": 2.1662490908056498,
+              "total_ms": 38.4997280780226,
+              "decoder_gpu_resident_ms": 0.3514841664582491
+            },
+            {
+              "encode_ms": 36.32845403626561,
+              "decode_ms": 2.195477019995451,
+              "total_ms": 38.52393105626106,
+              "decoder_gpu_resident_ms": 0.34967297688126564
+            },
+            {
+              "encode_ms": 36.35104186832905,
+              "decode_ms": 2.160737058147788,
+              "total_ms": 38.511778926476836,
+              "decoder_gpu_resident_ms": 0.34535909071564674
+            },
+            {
+              "encode_ms": 36.32829384878278,
+              "decode_ms": 2.180407987907529,
+              "total_ms": 38.50870183669031,
+              "decoder_gpu_resident_ms": 0.3446410410106182
+            },
+            {
+              "encode_ms": 36.337036872282624,
+              "decode_ms": 2.1689790301024914,
+              "total_ms": 38.506015902385116,
+              "decoder_gpu_resident_ms": 0.3477351274341345
+            },
+            {
+              "encode_ms": 36.323088919743896,
+              "decode_ms": 2.1710798610001802,
+              "total_ms": 38.494168780744076,
+              "decoder_gpu_resident_ms": 0.3477309364825487
+            },
+            {
+              "encode_ms": 36.336095072329044,
+              "decode_ms": 2.1662008948624134,
+              "total_ms": 38.50229596719146,
+              "decoder_gpu_resident_ms": 0.3563698846846819
+            },
+            {
+              "encode_ms": 36.35604493319988,
+              "decode_ms": 2.2195959463715553,
+              "total_ms": 38.57564087957144,
+              "decoder_gpu_resident_ms": 0.34593907184898853
+            },
+            {
+              "encode_ms": 36.488309036940336,
+              "decode_ms": 2.1786349825561047,
+              "total_ms": 38.66694401949644,
+              "decoder_gpu_resident_ms": 0.34342403523623943
+            },
+            {
+              "encode_ms": 36.44014918245375,
+              "decode_ms": 2.165215788409114,
+              "total_ms": 38.605364970862865,
+              "decoder_gpu_resident_ms": 0.35070301964879036
+            },
+            {
+              "encode_ms": 36.351747112348676,
+              "decode_ms": 2.248357981443405,
+              "total_ms": 38.60010509379208,
+              "decoder_gpu_resident_ms": 0.3410561475902796
+            }
+          ],
+          "peak_allocated_bytes": 355303936,
+          "latent_bytes": 614400,
+          "p50_ms": {
+            "encode_ms": 36.33320250082761,
+            "decode_ms": 2.170064370147884,
+            "total_ms": 38.50689600221813,
+            "decoder_gpu_resident_ms": 0.34862454049289227
+          },
+          "p95_ms": {
+            "encode_ms": 36.44255717517808,
+            "decode_ms": 2.221034048125148,
+            "total_ms": 38.608443923294544,
+            "decoder_gpu_resident_ms": 0.3661502501927316
+          }
+        }
+      ],
+      "completed": true
+    }
+  ]
+}

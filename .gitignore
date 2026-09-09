@@ -1,0 +1,10 @@
+data/
+__pycache__/
+*.pyc
+# throwaway experiment dirs
+runs/smoke/
+runs/timing/
+runs/util/
+runs/scratch_test/
+runs/ab_orig_*/
+runs/ab_fast_*/

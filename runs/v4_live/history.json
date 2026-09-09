@@ -1,0 +1,3576 @@
+{
+  "config": {
+    "depth_dir": "/scratch/latentros_data/depth",
+    "rgb_dir": "/scratch/latentros_data/rgb",
+    "derived_dir": "/scratch/latentros_data/derived_occ",
+    "epochs": 120,
+    "steps": 600,
+    "lr": 0.001,
+    "lo": 128,
+    "hi": 768,
+    "tag": "MMV4",
+    "output": "/n/lab_storage/acc_lab/Lab/kevinhe/LatentROS_ServerTraining/runs/v4_live",
+    "workers": 28,
+    "prefetch": 8,
+    "pin_memory": true,
+    "torch_threads": 1,
+    "precision": "fp32",
+    "budget": 1600000,
+    "batch_cap": 16,
+    "modality_weights": {
+      "depth": 2,
+      "occupancy": 1,
+      "costmap": 1,
+      "heatmap": 1,
+      "rgb": 2
+    },
+    "exit_weights": {
+      "1": 4,
+      "2": 3,
+      "3": 2,
+      "4": 1.5,
+      "5": 1,
+      "6": 1
+    },
+    "validation_sizes": [
+      [
+        256,
+        256
+      ],
+      [
+        384,
+        640
+      ],
+      [
+        720,
+        1280
+      ]
+    ],
+    "validation_exits": [
+      1,
+      3,
+      6
+    ],
+    "validation_batch": 2,
+    "train_counts": {
+      "depth": 4500,
+      "occupancy": 4500,
+      "costmap": 4500,
+      "heatmap": 4500,
+      "rgb": 4088
+    },
+    "validation_counts": {
+      "depth": 500,
+      "occupancy": 500,
+      "costmap": 500,
+      "heatmap": 500,
+      "rgb": 454
+    },
+    "source_sha256": {
+      "train_multimodal.py": "0d75bf18e1c209e2dedb5dd6a481c19ecff0ae9e390f148ec5e139538105303e",
+      "data_multimodal.py": "6d49d8a276cf260c04467a05ebbfee7c081c6d80b44976086fc50aaf6c4f4683",
+      "multimodal_ae.py": "3778568cf2f28f26acd628c33e8a5cb2b4f118a147e676bea6093397e3c2856a"
+    }
+  },
+  "runtime": {
+    "python": "3.10.13",
+    "torch": "2.5.1+cu121",
+    "numpy": "2.2.6",
+    "cuda": "12.1",
+    "cudnn": 90100,
+    "gpu": "NVIDIA H200",
+    "gpu_memory_bytes": 150101688320,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "torch_threads": 1,
+    "matmul_tf32": false,
+    "cudnn_tf32": true
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_mse": 0.09176834432165681,
+      "train_steps_by_modality": {
+        "depth": 153,
+        "occupancy": 101,
+        "costmap": 88,
+        "heatmap": 101,
+        "rgb": 157
+      },
+      "validation_mse": {
+        "depth": 0.05541599319419927,
+        "occupancy": 0.07847747943984966,
+        "costmap": 0.07305285577765769,
+        "heatmap": 0.06795141657090022,
+        "rgb": 0.06634804006252024,
+        "mean": 0.06824915700902541
+      },
+      "validation_psnr_db": {
+        "depth": 16.67221878801264,
+        "occupancy": 16.127343785087156,
+        "costmap": 16.87350978285277,
+        "heatmap": 17.076873633695953,
+        "rgb": 12.324320454840027,
+        "mean": 15.814853288897712
+      },
+      "learning_rate": 0.001,
+      "seconds": 28.81649377499707
+    },
+    {
+      "epoch": 2,
+      "train_mse": 0.028929401959030657,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 66,
+        "costmap": 93,
+        "heatmap": 91,
+        "rgb": 177
+      },
+      "validation_mse": {
+        "depth": 0.02324585211721973,
+        "occupancy": 0.025343087162279215,
+        "costmap": 0.026205017580650747,
+        "heatmap": 0.02093851738350673,
+        "rgb": 0.05111683667120007,
+        "mean": 0.029369862182971294
+      },
+      "validation_psnr_db": {
+        "depth": 19.579285582513744,
+        "occupancy": 21.187091571141636,
+        "costmap": 22.426811163526327,
+        "heatmap": 23.02192264968135,
+        "rgb": 15.734197318473077,
+        "mean": 20.389861657067225
+      },
+      "learning_rate": 0.0009998286624877785,
+      "seconds": 29.526879789074883
+    },
+    {
+      "epoch": 3,
+      "train_mse": 0.017153675171090677,
+      "train_steps_by_modality": {
+        "depth": 187,
+        "occupancy": 81,
+        "costmap": 72,
+        "heatmap": 86,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.016913607587210007,
+        "occupancy": 0.01565085618575621,
+        "costmap": 0.01912151075925471,
+        "heatmap": 0.013353189757455967,
+        "rgb": 0.04207293179610537,
+        "mean": 0.021422419217156454
+      },
+      "validation_psnr_db": {
+        "depth": 21.360506963645086,
+        "occupancy": 22.743974003663553,
+        "costmap": 24.64556573930746,
+        "heatmap": 25.62745353481622,
+        "rgb": 16.311939005168732,
+        "mean": 22.137887849320215
+      },
+      "learning_rate": 0.0009993147673772868,
+      "seconds": 29.813270475016907
+    },
+    {
+      "epoch": 4,
+      "train_mse": 0.011806732766708593,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 85,
+        "costmap": 86,
+        "heatmap": 76,
+        "rgb": 173
+      },
+      "validation_mse": {
+        "depth": 0.015144498902373016,
+        "occupancy": 0.012324623537198123,
+        "costmap": 0.012118381388265535,
+        "heatmap": 0.007988699398184609,
+        "rgb": 0.03276326037788143,
+        "mean": 0.01606789272078054
+      },
+      "validation_psnr_db": {
+        "depth": 21.980907057536008,
+        "occupancy": 23.646140267826112,
+        "costmap": 26.087133210135605,
+        "heatmap": 27.63341078369879,
+        "rgb": 17.82540942166234,
+        "mean": 23.43460014817177
+      },
+      "learning_rate": 0.000998458666866564,
+      "seconds": 27.31070290901698
+    },
+    {
+      "epoch": 5,
+      "train_mse": 0.008688947486177009,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 83,
+        "costmap": 86,
+        "heatmap": 82,
+        "rgb": 179
+      },
+      "validation_mse": {
+        "depth": 0.01254712181010594,
+        "occupancy": 0.011610276851570234,
+        "costmap": 0.009975249672101604,
+        "heatmap": 0.006983782027317729,
+        "rgb": 0.034110575164150864,
+        "mean": 0.015045401105049275
+      },
+      "validation_psnr_db": {
+        "depth": 22.484176002209427,
+        "occupancy": 24.039391830331382,
+        "costmap": 26.61401819012215,
+        "heatmap": 27.706558456152756,
+        "rgb": 17.884402946610425,
+        "mean": 23.745709485085225
+      },
+      "learning_rate": 0.0009972609476841365,
+      "seconds": 28.38680213293992
+    },
+    {
+      "epoch": 6,
+      "train_mse": 0.008003134281340559,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 69,
+        "costmap": 97,
+        "heatmap": 86,
+        "rgb": 168
+      },
+      "validation_mse": {
+        "depth": 0.007999508150128854,
+        "occupancy": 0.009949035205257436,
+        "costmap": 0.008429848715119684,
+        "heatmap": 0.006380128215015348,
+        "rgb": 0.026781585209795997,
+        "mean": 0.011908021099063465
+      },
+      "validation_psnr_db": {
+        "depth": 23.89180198329602,
+        "occupancy": 24.358640910028353,
+        "costmap": 27.840885435909726,
+        "heatmap": 28.93231593524996,
+        "rgb": 19.05265392203375,
+        "mean": 24.815259637303562
+      },
+      "learning_rate": 0.000995722430686905,
+      "seconds": 29.30426171491854
+    },
+    {
+      "epoch": 7,
+      "train_mse": 0.006868946237664204,
+      "train_steps_by_modality": {
+        "depth": 189,
+        "occupancy": 82,
+        "costmap": 75,
+        "heatmap": 89,
+        "rgb": 165
+      },
+      "validation_mse": {
+        "depth": 0.0069599680072214044,
+        "occupancy": 0.01046950191731513,
+        "costmap": 0.00713383813692619,
+        "heatmap": 0.007484443757372598,
+        "rgb": 0.02783997311619007,
+        "mean": 0.011977544987005078
+      },
+      "validation_psnr_db": {
+        "depth": 24.429597239698584,
+        "occupancy": 24.655426295882044,
+        "costmap": 28.404545665095426,
+        "heatmap": 29.31420261371619,
+        "rgb": 18.976159715209796,
+        "mean": 25.155986305920408
+      },
+      "learning_rate": 0.0009938441702975688,
+      "seconds": 27.98841358302161
+    },
+    {
+      "epoch": 8,
+      "train_mse": 0.005210620420851532,
+      "train_steps_by_modality": {
+        "depth": 156,
+        "occupancy": 92,
+        "costmap": 89,
+        "heatmap": 97,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.005584904147932927,
+        "occupancy": 0.01078542577549039,
+        "costmap": 0.008729576144509742,
+        "heatmap": 0.004759112917074365,
+        "rgb": 0.02304850399701132,
+        "mean": 0.010581504596403748
+      },
+      "validation_psnr_db": {
+        "depth": 24.429549698247634,
+        "occupancy": 25.000919361767266,
+        "costmap": 28.638533977861655,
+        "heatmap": 29.925649165980417,
+        "rgb": 19.36194479969329,
+        "mean": 25.47131940071005
+      },
+      "learning_rate": 0.0009916274537819772,
+      "seconds": 29.526720423949882
+    },
+    {
+      "epoch": 9,
+      "train_mse": 0.005442203247087794,
+      "train_steps_by_modality": {
+        "depth": 172,
+        "occupancy": 101,
+        "costmap": 71,
+        "heatmap": 89,
+        "rgb": 167
+      },
+      "validation_mse": {
+        "depth": 0.00505279166261769,
+        "occupancy": 0.009465156323535161,
+        "costmap": 0.0069990650420853244,
+        "heatmap": 0.00420776717995371,
+        "rgb": 0.022483204970032804,
+        "mean": 0.009641597035644937
+      },
+      "validation_psnr_db": {
+        "depth": 25.719978675855927,
+        "occupancy": 25.219352137267933,
+        "costmap": 29.172665758290847,
+        "heatmap": 31.4174303254069,
+        "rgb": 19.791704988184605,
+        "mean": 26.26422637700124
+      },
+      "learning_rate": 0.0009890738003669026,
+      "seconds": 28.718195741064847
+    },
+    {
+      "epoch": 10,
+      "train_mse": 0.004806686094379984,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 96,
+        "costmap": 95,
+        "heatmap": 83,
+        "rgb": 153
+      },
+      "validation_mse": {
+        "depth": 0.00398942098642389,
+        "occupancy": 0.00990556880100889,
+        "costmap": 0.006742236503568064,
+        "heatmap": 0.0055365097715467625,
+        "rgb": 0.01757381956041273,
+        "mean": 0.008749511124592067
+      },
+      "validation_psnr_db": {
+        "depth": 25.67780591592568,
+        "occupancy": 25.455330767673292,
+        "costmap": 28.640886471887526,
+        "heatmap": 29.20033068685338,
+        "rgb": 20.75283798866472,
+        "mean": 25.94543836620092
+      },
+      "learning_rate": 0.000986184960198838,
+      "seconds": 26.38411717885174
+    },
+    {
+      "epoch": 11,
+      "train_mse": 0.004958913280036844,
+      "train_steps_by_modality": {
+        "depth": 176,
+        "occupancy": 85,
+        "costmap": 69,
+        "heatmap": 98,
+        "rgb": 172
+      },
+      "validation_mse": {
+        "depth": 0.0058991920636294205,
+        "occupancy": 0.009255392250553187,
+        "costmap": 0.006442140377152504,
+        "heatmap": 0.004136443785682786,
+        "rgb": 0.019006024852084618,
+        "mean": 0.008947838665820504
+      },
+      "validation_psnr_db": {
+        "depth": 25.77287303542647,
+        "occupancy": 25.2529366833025,
+        "costmap": 29.33662670971817,
+        "heatmap": 31.086310147682234,
+        "rgb": 20.56649179648034,
+        "mean": 26.40304767452194
+      },
+      "learning_rate": 0.0009829629131445337,
+      "seconds": 30.06190905207768
+    },
+    {
+      "epoch": 12,
+      "train_mse": 0.004405939354849882,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 85,
+        "costmap": 85,
+        "heatmap": 89,
+        "rgb": 161
+      },
+      "validation_mse": {
+        "depth": 0.004378092016041692,
+        "occupancy": 0.009089006490184046,
+        "costmap": 0.006223740685931666,
+        "heatmap": 0.003957257349813719,
+        "rgb": 0.013156900660962693,
+        "mean": 0.007360999440586763
+      },
+      "validation_psnr_db": {
+        "depth": 25.923181737977295,
+        "occupancy": 26.00550765423175,
+        "costmap": 29.835337714621275,
+        "heatmap": 31.369839400201524,
+        "rgb": 21.594396666882705,
+        "mean": 26.945652634782913
+      },
+      "learning_rate": 0.0009794098674340962,
+      "seconds": 26.876693524885923
+    },
+    {
+      "epoch": 13,
+      "train_mse": 0.004486937449279746,
+      "train_steps_by_modality": {
+        "depth": 163,
+        "occupancy": 92,
+        "costmap": 88,
+        "heatmap": 91,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.003908312077530556,
+        "occupancy": 0.010451758370133271,
+        "costmap": 0.006149459508984971,
+        "heatmap": 0.0038962917379750353,
+        "rgb": 0.014269633360931443,
+        "mean": 0.007735091011111056
+      },
+      "validation_psnr_db": {
+        "depth": 26.15728735539522,
+        "occupancy": 25.952006050869514,
+        "costmap": 29.210060929625303,
+        "heatmap": 32.02118071435987,
+        "rgb": 21.342232879034455,
+        "mean": 26.93655358585687
+      },
+      "learning_rate": 0.0009755282581475765,
+      "seconds": 29.558064627926797
+    },
+    {
+      "epoch": 14,
+      "train_mse": 0.004108442278848088,
+      "train_steps_by_modality": {
+        "depth": 167,
+        "occupancy": 78,
+        "costmap": 100,
+        "heatmap": 76,
+        "rgb": 179
+      },
+      "validation_mse": {
+        "depth": 0.00474749072196169,
+        "occupancy": 0.008563173655905606,
+        "costmap": 0.006371441455687293,
+        "heatmap": 0.004025050007233706,
+        "rgb": 0.014572898598594798,
+        "mean": 0.007656010887876619
+      },
+      "validation_psnr_db": {
+        "depth": 25.14667905582017,
+        "occupancy": 26.260149270851795,
+        "costmap": 28.112916016153978,
+        "heatmap": 29.552743512085645,
+        "rgb": 21.514190825827633,
+        "mean": 26.117335736147844
+      },
+      "learning_rate": 0.000971320745546089,
+      "seconds": 28.519683443009853
+    },
+    {
+      "epoch": 15,
+      "train_mse": 0.004360903456254164,
+      "train_steps_by_modality": {
+        "depth": 166,
+        "occupancy": 72,
+        "costmap": 78,
+        "heatmap": 106,
+        "rgb": 178
+      },
+      "validation_mse": {
+        "depth": 0.0035486687459827713,
+        "occupancy": 0.010814319085814835,
+        "costmap": 0.004982671893635092,
+        "heatmap": 0.0038929962401097226,
+        "rgb": 0.012981144620829986,
+        "mean": 0.0072439601172744825
+      },
+      "validation_psnr_db": {
+        "depth": 27.003328758695318,
+        "occupancy": 25.945217727439406,
+        "costmap": 30.52955864291932,
+        "heatmap": 31.886707227794975,
+        "rgb": 21.71274225218093,
+        "mean": 27.415510921805993
+      },
+      "learning_rate": 0.0009667902132486006,
+      "seconds": 29.62407433707267
+    },
+    {
+      "epoch": 16,
+      "train_mse": 0.003854533173677434,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 84,
+        "costmap": 84,
+        "heatmap": 91,
+        "rgb": 172
+      },
+      "validation_mse": {
+        "depth": 0.00382355131700428,
+        "occupancy": 0.008567108408088744,
+        "costmap": 0.00706432077519518,
+        "heatmap": 0.0034148815539083444,
+        "rgb": 0.010319609518369867,
+        "mean": 0.0066378943145132836
+      },
+      "validation_psnr_db": {
+        "depth": 26.079467246720505,
+        "occupancy": 26.27180918732019,
+        "costmap": 29.575748977818066,
+        "heatmap": 30.733283658281657,
+        "rgb": 22.326690127731915,
+        "mean": 26.997399839574467
+      },
+      "learning_rate": 0.0009619397662556431,
+      "seconds": 28.163844297174364
+    },
+    {
+      "epoch": 17,
+      "train_mse": 0.0038007179750153834,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 91,
+        "costmap": 77,
+        "heatmap": 88,
+        "rgb": 175
+      },
+      "validation_mse": {
+        "depth": 0.003662676773577308,
+        "occupancy": 0.00859956370226832,
+        "costmap": 0.006660540194489941,
+        "heatmap": 0.003633438232807546,
+        "rgb": 0.011119054061257176,
+        "mean": 0.006735054592880057
+      },
+      "validation_psnr_db": {
+        "depth": 27.439261187600838,
+        "occupancy": 26.699584281074188,
+        "costmap": 30.687167434856708,
+        "heatmap": 32.815178265616424,
+        "rgb": 21.874367722326458,
+        "mean": 27.903111778294925
+      },
+      "learning_rate": 0.0009567727288213001,
+      "seconds": 29.291207088157535
+    },
+    {
+      "epoch": 18,
+      "train_mse": 0.0034456764019887487,
+      "train_steps_by_modality": {
+        "depth": 175,
+        "occupancy": 92,
+        "costmap": 83,
+        "heatmap": 85,
+        "rgb": 165
+      },
+      "validation_mse": {
+        "depth": 0.004065200641182148,
+        "occupancy": 0.007116609554537313,
+        "costmap": 0.0051916360631973175,
+        "heatmap": 0.003472483903654696,
+        "rgb": 0.011188694431136051,
+        "mean": 0.006206924918741505
+      },
+      "validation_psnr_db": {
+        "depth": 27.1647632302586,
+        "occupancy": 27.383615455787027,
+        "costmap": 31.02203998303702,
+        "heatmap": 32.69752553375963,
+        "rgb": 21.793531997292078,
+        "mean": 28.012295240026866
+      },
+      "learning_rate": 0.0009512926421749302,
+      "seconds": 27.37362473993562
+    },
+    {
+      "epoch": 19,
+      "train_mse": 0.003532037806853623,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 83,
+        "costmap": 96,
+        "heatmap": 90,
+        "rgb": 162
+      },
+      "validation_mse": {
+        "depth": 0.00472759771380677,
+        "occupancy": 0.0066894081004041555,
+        "costmap": 0.004561352531406253,
+        "heatmap": 0.004178983286692528,
+        "rgb": 0.010622807571457492,
+        "mean": 0.0061560298407534395
+      },
+      "validation_psnr_db": {
+        "depth": 26.68331024623547,
+        "occupancy": 27.361128277607513,
+        "costmap": 31.11680627982883,
+        "heatmap": 33.04524008271711,
+        "rgb": 21.920112992353577,
+        "mean": 28.0253195757485
+      },
+      "learning_rate": 0.0009455032620941837,
+      "seconds": 27.52972049987875
+    },
+    {
+      "epoch": 20,
+      "train_mse": 0.003659391038296841,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 68,
+        "costmap": 94,
+        "heatmap": 86,
+        "rgb": 183
+      },
+      "validation_mse": {
+        "depth": 0.004295463382732123,
+        "occupancy": 0.008834194904516658,
+        "costmap": 0.0052368125244457685,
+        "heatmap": 0.00289151323280142,
+        "rgb": 0.010914039979171421,
+        "mean": 0.006434404804733477
+      },
+      "validation_psnr_db": {
+        "depth": 26.100355910659285,
+        "occupancy": 27.385685012174395,
+        "costmap": 30.63074886374218,
+        "heatmap": 31.351664358184312,
+        "rgb": 22.11298104714273,
+        "mean": 27.51628703838058
+      },
+      "learning_rate": 0.0009394085563309825,
+      "seconds": 30.591305300127715
+    },
+    {
+      "epoch": 21,
+      "train_mse": 0.003602900845047164,
+      "train_steps_by_modality": {
+        "depth": 167,
+        "occupancy": 97,
+        "costmap": 100,
+        "heatmap": 83,
+        "rgb": 153
+      },
+      "validation_mse": {
+        "depth": 0.003992043387067194,
+        "occupancy": 0.008525463537403589,
+        "costmap": 0.005098599409797721,
+        "heatmap": 0.003087684047285519,
+        "rgb": 0.009856065786961053,
+        "mean": 0.006111971233703014
+      },
+      "validation_psnr_db": {
+        "depth": 26.519355405650302,
+        "occupancy": 27.413024855361897,
+        "costmap": 31.063840185720935,
+        "heatmap": 32.45435232632508,
+        "rgb": 21.848443832170325,
+        "mean": 27.859803321045707
+      },
+      "learning_rate": 0.0009330127018922192,
+      "seconds": 26.72323477594182
+    },
+    {
+      "epoch": 22,
+      "train_mse": 0.003457927607981522,
+      "train_steps_by_modality": {
+        "depth": 149,
+        "occupancy": 90,
+        "costmap": 91,
+        "heatmap": 98,
+        "rgb": 172
+      },
+      "validation_mse": {
+        "depth": 0.003233666703130843,
+        "occupancy": 0.007833365773775667,
+        "costmap": 0.003910753508939201,
+        "heatmap": 0.0026818409826066475,
+        "rgb": 0.008431107995824682,
+        "mean": 0.005218146992855407
+      },
+      "validation_psnr_db": {
+        "depth": 27.339222467808714,
+        "occupancy": 27.94695773751541,
+        "costmap": 31.637680536281874,
+        "heatmap": 34.00271499084879,
+        "rgb": 22.59982838423566,
+        "mean": 28.705280823338093
+      },
+      "learning_rate": 0.0009263200821770459,
+      "seconds": 30.83420986798592
+    },
+    {
+      "epoch": 23,
+      "train_mse": 0.0034304814891038403,
+      "train_steps_by_modality": {
+        "depth": 184,
+        "occupancy": 88,
+        "costmap": 83,
+        "heatmap": 63,
+        "rgb": 182
+      },
+      "validation_mse": {
+        "depth": 0.0038679568226345712,
+        "occupancy": 0.007164954525554397,
+        "costmap": 0.004280748459374688,
+        "heatmap": 0.002305811347064769,
+        "rgb": 0.008328611936627163,
+        "mean": 0.005189616618251118
+      },
+      "validation_psnr_db": {
+        "depth": 26.31679336108848,
+        "occupancy": 28.193335102635164,
+        "costmap": 31.22682147360197,
+        "heatmap": 33.0026025982282,
+        "rgb": 22.77311101500131,
+        "mean": 28.30253271011103
+      },
+      "learning_rate": 0.0009193352839727118,
+      "seconds": 26.982991417869925
+    },
+    {
+      "epoch": 24,
+      "train_mse": 0.0034185926813976647,
+      "train_steps_by_modality": {
+        "depth": 176,
+        "occupancy": 82,
+        "costmap": 94,
+        "heatmap": 78,
+        "rgb": 170
+      },
+      "validation_mse": {
+        "depth": 0.004652371869370755,
+        "occupancy": 0.007470678213091257,
+        "costmap": 0.005500512600216704,
+        "heatmap": 0.002373094062123629,
+        "rgb": 0.008658500271849334,
+        "mean": 0.005731031403330336
+      },
+      "validation_psnr_db": {
+        "depth": 27.044730261594324,
+        "occupancy": 28.476740637183084,
+        "costmap": 32.629761506932375,
+        "heatmap": 34.32157330328199,
+        "rgb": 23.05799848014472,
+        "mean": 29.106160837827296
+      },
+      "learning_rate": 0.0009120630943110076,
+      "seconds": 27.988242252962664
+    },
+    {
+      "epoch": 25,
+      "train_mse": 0.0031952933247127173,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 87,
+        "costmap": 82,
+        "heatmap": 83,
+        "rgb": 175
+      },
+      "validation_mse": {
+        "depth": 0.002807956227722267,
+        "occupancy": 0.008831798498350609,
+        "costmap": 0.004578645412241005,
+        "heatmap": 0.002563479564236736,
+        "rgb": 0.010974381791634692,
+        "mean": 0.005951252298837062
+      },
+      "validation_psnr_db": {
+        "depth": 26.39155652040575,
+        "occupancy": 27.21735108165784,
+        "costmap": 28.756741480745063,
+        "heatmap": 29.978752493383006,
+        "rgb": 21.616477828082456,
+        "mean": 26.792175880854824
+      },
+      "learning_rate": 0.0009045084971874735,
+      "seconds": 28.639470589114353
+    },
+    {
+      "epoch": 26,
+      "train_mse": 0.0030174531671976488,
+      "train_steps_by_modality": {
+        "depth": 172,
+        "occupancy": 80,
+        "costmap": 87,
+        "heatmap": 89,
+        "rgb": 172
+      },
+      "validation_mse": {
+        "depth": 0.002595831332857617,
+        "occupancy": 0.007232151759025227,
+        "costmap": 0.003619472289048847,
+        "heatmap": 0.001931730252585516,
+        "rgb": 0.007574507294015752,
+        "mean": 0.004590738585506592
+      },
+      "validation_psnr_db": {
+        "depth": 27.892754113034655,
+        "occupancy": 28.792687285394972,
+        "costmap": 33.17395381614897,
+        "heatmap": 35.679419981636514,
+        "rgb": 23.316071936717904,
+        "mean": 29.770977426586605
+      },
+      "learning_rate": 0.0008966766701456174,
+      "seconds": 28.492521645966917
+    },
+    {
+      "epoch": 27,
+      "train_mse": 0.0032715119743140044,
+      "train_steps_by_modality": {
+        "depth": 162,
+        "occupancy": 91,
+        "costmap": 79,
+        "heatmap": 93,
+        "rgb": 175
+      },
+      "validation_mse": {
+        "depth": 0.0026046548252149173,
+        "occupancy": 0.007595423365677966,
+        "costmap": 0.004007030458322131,
+        "heatmap": 0.0017790850821863085,
+        "rgb": 0.0075386489689764045,
+        "mean": 0.004704968540075545
+      },
+      "validation_psnr_db": {
+        "depth": 28.076359335338516,
+        "occupancy": 28.503892225810066,
+        "costmap": 32.79593048158501,
+        "heatmap": 35.166781613684805,
+        "rgb": 23.154449818116348,
+        "mean": 29.53948269490695
+      },
+      "learning_rate": 0.0008885729807284853,
+      "seconds": 30.815046860137954
+    },
+    {
+      "epoch": 28,
+      "train_mse": 0.0029612866039102907,
+      "train_steps_by_modality": {
+        "depth": 165,
+        "occupancy": 88,
+        "costmap": 82,
+        "heatmap": 91,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.002432437540846877,
+        "occupancy": 0.0066005047717933646,
+        "costmap": 0.0033602168348604916,
+        "heatmap": 0.0017427551699963966,
+        "rgb": 0.007669774414454069,
+        "mean": 0.004361137746390241
+      },
+      "validation_psnr_db": {
+        "depth": 28.845582158423074,
+        "occupancy": 28.88285235618112,
+        "costmap": 33.29838127606807,
+        "heatmap": 36.17869171381983,
+        "rgb": 23.047078512976892,
+        "mean": 30.050517203493797
+      },
+      "learning_rate": 0.0008802029828000154,
+      "seconds": 29.19964199489914
+    },
+    {
+      "epoch": 29,
+      "train_mse": 0.0030022051267133065,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 79,
+        "costmap": 80,
+        "heatmap": 96,
+        "rgb": 176
+      },
+      "validation_mse": {
+        "depth": 0.003231189417419955,
+        "occupancy": 0.007362181747642656,
+        "costmap": 0.0028581340811797418,
+        "heatmap": 0.0018097130313334572,
+        "rgb": 0.007538288042673634,
+        "mean": 0.004559901264049889
+      },
+      "validation_psnr_db": {
+        "depth": 27.161364108773242,
+        "occupancy": 28.19712901213846,
+        "costmap": 32.475052816462814,
+        "heatmap": 34.1074381412913,
+        "rgb": 23.335470978365436,
+        "mean": 29.055291011406247
+      },
+      "learning_rate": 0.000871572412738697,
+      "seconds": 29.76005096384324
+    },
+    {
+      "epoch": 30,
+      "train_mse": 0.002710701043464117,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 94,
+        "costmap": 72,
+        "heatmap": 98,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.003134577366937366,
+        "occupancy": 0.007184214681425753,
+        "costmap": 0.0038589463567607002,
+        "heatmap": 0.0017533345791081148,
+        "rgb": 0.007759863743558526,
+        "mean": 0.004738187345558092
+      },
+      "validation_psnr_db": {
+        "depth": 28.434925553082447,
+        "occupancy": 29.369492040528215,
+        "costmap": 33.328178091801334,
+        "heatmap": 35.88152789931156,
+        "rgb": 23.2335035138768,
+        "mean": 30.049525419720073
+      },
+      "learning_rate": 0.0008626871855061437,
+      "seconds": 28.579695777967572
+    },
+    {
+      "epoch": 31,
+      "train_mse": 0.0032572086276377375,
+      "train_steps_by_modality": {
+        "depth": 177,
+        "occupancy": 81,
+        "costmap": 87,
+        "heatmap": 78,
+        "rgb": 177
+      },
+      "validation_mse": {
+        "depth": 0.003908299805415381,
+        "occupancy": 0.008163891409316825,
+        "costmap": 0.0042248181950223325,
+        "heatmap": 0.002033219784708409,
+        "rgb": 0.007834297566053769,
+        "mean": 0.0052329053521033425
+      },
+      "validation_psnr_db": {
+        "depth": 26.69660724716906,
+        "occupancy": 28.043784446833953,
+        "costmap": 32.482299250181754,
+        "heatmap": 34.311102515313614,
+        "rgb": 23.002850024855878,
+        "mean": 28.907328696870856
+      },
+      "learning_rate": 0.0008535533905932736,
+      "seconds": 29.435004609869793
+    },
+    {
+      "epoch": 32,
+      "train_mse": 0.0031290415802671607,
+      "train_steps_by_modality": {
+        "depth": 178,
+        "occupancy": 97,
+        "costmap": 80,
+        "heatmap": 77,
+        "rgb": 168
+      },
+      "validation_mse": {
+        "depth": 0.0027701211850702143,
+        "occupancy": 0.005808540813935299,
+        "costmap": 0.0030538573511067727,
+        "heatmap": 0.0018703652220008532,
+        "rgb": 0.008020753105584946,
+        "mean": 0.0043047275355396165
+      },
+      "validation_psnr_db": {
+        "depth": 28.120907604961026,
+        "occupancy": 28.884933838222018,
+        "costmap": 33.668011660052976,
+        "heatmap": 35.43326213420942,
+        "rgb": 22.729842365352354,
+        "mean": 29.767391520559556
+      },
+      "learning_rate": 0.0008441772878468768,
+      "seconds": 26.81721963803284
+    },
+    {
+      "epoch": 33,
+      "train_mse": 0.0029372251911475664,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 79,
+        "costmap": 92,
+        "heatmap": 87,
+        "rgb": 172
+      },
+      "validation_mse": {
+        "depth": 0.003978612436589578,
+        "occupancy": 0.00781049218736977,
+        "costmap": 0.0032936574118341217,
+        "heatmap": 0.0019885833017825563,
+        "rgb": 0.007575727895730072,
+        "mean": 0.004929414646661219
+      },
+      "validation_psnr_db": {
+        "depth": 26.821107748284465,
+        "occupancy": 29.37284048117313,
+        "costmap": 31.89228704304258,
+        "heatmap": 32.67673094346305,
+        "rgb": 22.959927747439814,
+        "mean": 28.744578792680606
+      },
+      "learning_rate": 0.0008345653031794289,
+      "seconds": 28.2839751529973
+    },
+    {
+      "epoch": 34,
+      "train_mse": 0.0027715583021169247,
+      "train_steps_by_modality": {
+        "depth": 161,
+        "occupancy": 86,
+        "costmap": 96,
+        "heatmap": 94,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.0039391684727484565,
+        "occupancy": 0.006549116336827865,
+        "costmap": 0.0026088350924611506,
+        "heatmap": 0.0020717163248870443,
+        "rgb": 0.00755605422374275,
+        "mean": 0.004544978090133453
+      },
+      "validation_psnr_db": {
+        "depth": 27.58380102712828,
+        "occupancy": 29.651118021403093,
+        "costmap": 33.61963672125867,
+        "heatmap": 35.01632258202586,
+        "rgb": 23.081073665541357,
+        "mean": 29.790390403471452
+      },
+      "learning_rate": 0.0008247240241650917,
+      "seconds": 30.037548959022388
+    },
+    {
+      "epoch": 35,
+      "train_mse": 0.0029365017817781338,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 86,
+        "costmap": 92,
+        "heatmap": 85,
+        "rgb": 164
+      },
+      "validation_mse": {
+        "depth": 0.0028605215969340256,
+        "occupancy": 0.007678816789444277,
+        "costmap": 0.00254783525330519,
+        "heatmap": 0.0015332490048523243,
+        "rgb": 0.007853307437876033,
+        "mean": 0.00449474601648237
+      },
+      "validation_psnr_db": {
+        "depth": 29.20164829567879,
+        "occupancy": 28.96790900526139,
+        "costmap": 33.96332344144332,
+        "heatmap": 36.78006434867582,
+        "rgb": 23.08569939822716,
+        "mean": 30.399728897857294
+      },
+      "learning_rate": 0.0008146601955249186,
+      "seconds": 26.951221438823268
+    },
+    {
+      "epoch": 36,
+      "train_mse": 0.0027563351958300093,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 81,
+        "costmap": 78,
+        "heatmap": 84,
+        "rgb": 187
+      },
+      "validation_mse": {
+        "depth": 0.002542090086434554,
+        "occupancy": 0.006789738850380268,
+        "costmap": 0.002247602605267376,
+        "heatmap": 0.0011965370524396552,
+        "rgb": 0.008124554335760573,
+        "mean": 0.004180104586056485
+      },
+      "validation_psnr_db": {
+        "depth": 28.84262168626843,
+        "occupancy": 29.304899306318866,
+        "costmap": 34.74545381541992,
+        "heatmap": 37.236405374931834,
+        "rgb": 23.922004962966664,
+        "mean": 30.81027702918114
+      },
+      "learning_rate": 0.0008043807145043601,
+      "seconds": 28.924481241963804
+    },
+    {
+      "epoch": 37,
+      "train_mse": 0.0029446954414955448,
+      "train_steps_by_modality": {
+        "depth": 177,
+        "occupancy": 79,
+        "costmap": 81,
+        "heatmap": 80,
+        "rgb": 183
+      },
+      "validation_mse": {
+        "depth": 0.0033637928847585702,
+        "occupancy": 0.006840022454626806,
+        "costmap": 0.0022897982024814053,
+        "heatmap": 0.0011054381357098464,
+        "rgb": 0.007491453098029726,
+        "mean": 0.004218100955121271
+      },
+      "validation_psnr_db": {
+        "depth": 28.245889097355615,
+        "occupancy": 28.40976717595155,
+        "costmap": 34.039669618682744,
+        "heatmap": 36.20588394776817,
+        "rgb": 23.318621701969978,
+        "mean": 30.043966308345613
+      },
+      "learning_rate": 0.0007938926261462363,
+      "seconds": 28.151815481949598
+    },
+    {
+      "epoch": 38,
+      "train_mse": 0.0027600776271522894,
+      "train_steps_by_modality": {
+        "depth": 165,
+        "occupancy": 87,
+        "costmap": 87,
+        "heatmap": 87,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.00255255138876641,
+        "occupancy": 0.007018557622763587,
+        "costmap": 0.002269239719276407,
+        "heatmap": 0.0012804457094009397,
+        "rgb": 0.009089645289350301,
+        "mean": 0.004442087945911529
+      },
+      "validation_psnr_db": {
+        "depth": 28.987525882464904,
+        "occupancy": 29.23352301145006,
+        "costmap": 34.3260652621062,
+        "heatmap": 36.68330135489501,
+        "rgb": 23.350554384781628,
+        "mean": 30.516193979139558
+      },
+      "learning_rate": 0.0007832031184624162,
+      "seconds": 29.371020836988464
+    },
+    {
+      "epoch": 39,
+      "train_mse": 0.0027947903884190358,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 94,
+        "costmap": 77,
+        "heatmap": 88,
+        "rgb": 168
+      },
+      "validation_mse": {
+        "depth": 0.002462573874961688,
+        "occupancy": 0.006334264991488049,
+        "costmap": 0.0020830665081222025,
+        "heatmap": 0.0010009987044112575,
+        "rgb": 0.007054764919707345,
+        "mean": 0.0037871337997381085
+      },
+      "validation_psnr_db": {
+        "depth": 29.089412228072295,
+        "occupancy": 30.011540628870357,
+        "costmap": 34.451544478555384,
+        "heatmap": 37.22020511194066,
+        "rgb": 23.9633960896375,
+        "mean": 30.94721970741524
+      },
+      "learning_rate": 0.0007723195175075133,
+      "seconds": 27.319833658868447
+    },
+    {
+      "epoch": 40,
+      "train_mse": 0.0022896625173234497,
+      "train_steps_by_modality": {
+        "depth": 172,
+        "occupancy": 77,
+        "costmap": 93,
+        "heatmap": 88,
+        "rgb": 170
+      },
+      "validation_mse": {
+        "depth": 0.0021951963879271513,
+        "occupancy": 0.00641606472021926,
+        "costmap": 0.0021420930548225036,
+        "heatmap": 0.0011808666778152757,
+        "rgb": 0.007941790170864098,
+        "mean": 0.003975202202329657
+      },
+      "validation_psnr_db": {
+        "depth": 28.811236408823497,
+        "occupancy": 29.634319345886873,
+        "costmap": 34.876180464290854,
+        "heatmap": 37.36031796906579,
+        "rgb": 23.21402956510203,
+        "mean": 30.77921675063381
+      },
+      "learning_rate": 0.0007612492823579742,
+      "seconds": 28.56575357611291
+    },
+    {
+      "epoch": 41,
+      "train_mse": 0.002924180352473134,
+      "train_steps_by_modality": {
+        "depth": 152,
+        "occupancy": 92,
+        "costmap": 104,
+        "heatmap": 87,
+        "rgb": 165
+      },
+      "validation_mse": {
+        "depth": 0.003515359614134973,
+        "occupancy": 0.006017755904597127,
+        "costmap": 0.0028711247636642335,
+        "heatmap": 0.0012319403463657687,
+        "rgb": 0.007834517914387915,
+        "mean": 0.004294139708630003
+      },
+      "validation_psnr_db": {
+        "depth": 27.628197137016567,
+        "occupancy": 28.903201614360498,
+        "costmap": 33.92134117321485,
+        "heatmap": 36.4328058451875,
+        "rgb": 23.11260162084772,
+        "mean": 29.999629478125428
+      },
+      "learning_rate": 0.0007499999999999998,
+      "seconds": 28.637117268983275
+    },
+    {
+      "epoch": 42,
+      "train_mse": 0.0028099317523386466,
+      "train_steps_by_modality": {
+        "depth": 165,
+        "occupancy": 86,
+        "costmap": 94,
+        "heatmap": 93,
+        "rgb": 162
+      },
+      "validation_mse": {
+        "depth": 0.0031313526026982195,
+        "occupancy": 0.006785552537621697,
+        "costmap": 0.0019838884446572694,
+        "heatmap": 0.0013344186716292622,
+        "rgb": 0.006768360514090293,
+        "mean": 0.004000714554139348
+      },
+      "validation_psnr_db": {
+        "depth": 28.464005366397505,
+        "occupancy": 29.501239702132345,
+        "costmap": 34.95494000772543,
+        "heatmap": 37.84264770138158,
+        "rgb": 23.487073244637084,
+        "mean": 30.849981204454785
+      },
+      "learning_rate": 0.0007385793801298041,
+      "seconds": 28.222083569969982
+    },
+    {
+      "epoch": 43,
+      "train_mse": 0.0027022872893106373,
+      "train_steps_by_modality": {
+        "depth": 165,
+        "occupancy": 81,
+        "costmap": 90,
+        "heatmap": 89,
+        "rgb": 175
+      },
+      "validation_mse": {
+        "depth": 0.002412345981509942,
+        "occupancy": 0.006375010097043641,
+        "costmap": 0.0018720978247680857,
+        "heatmap": 0.001437905513739679,
+        "rgb": 0.006806415712667836,
+        "mean": 0.003780755025945837
+      },
+      "validation_psnr_db": {
+        "depth": 29.244187655240225,
+        "occupancy": 29.791957654919102,
+        "costmap": 35.37156093796233,
+        "heatmap": 37.61813611255474,
+        "rgb": 23.642890671921283,
+        "mean": 31.133746606519537
+      },
+      "learning_rate": 0.0007269952498697732,
+      "seconds": 29.375743706012145
+    },
+    {
+      "epoch": 44,
+      "train_mse": 0.0026803852560791106,
+      "train_steps_by_modality": {
+        "depth": 158,
+        "occupancy": 90,
+        "costmap": 92,
+        "heatmap": 92,
+        "rgb": 168
+      },
+      "validation_mse": {
+        "depth": 0.0027581302678704057,
+        "occupancy": 0.005888270377909066,
+        "costmap": 0.0021445658144835355,
+        "heatmap": 0.0013082727572408556,
+        "rgb": 0.007116769311121768,
+        "mean": 0.0038432017057251264
+      },
+      "validation_psnr_db": {
+        "depth": 28.56172265977003,
+        "occupancy": 29.916997904325942,
+        "costmap": 34.957440015676724,
+        "heatmap": 37.168679918662434,
+        "rgb": 23.886231355084405,
+        "mean": 30.898214370703908
+      },
+      "learning_rate": 0.0007152555484041474,
+      "seconds": 28.523437321884558
+    },
+    {
+      "epoch": 45,
+      "train_mse": 0.002766724032400513,
+      "train_steps_by_modality": {
+        "depth": 181,
+        "occupancy": 75,
+        "costmap": 74,
+        "heatmap": 77,
+        "rgb": 193
+      },
+      "validation_mse": {
+        "depth": 0.0021640335908159614,
+        "occupancy": 0.005824450785843914,
+        "costmap": 0.002096393633312093,
+        "heatmap": 0.0011700958597834364,
+        "rgb": 0.008092274708259437,
+        "mean": 0.0038694497156029684
+      },
+      "validation_psnr_db": {
+        "depth": 29.36603580699663,
+        "occupancy": 29.46451606745509,
+        "costmap": 35.812205772682105,
+        "heatmap": 38.65275589117577,
+        "rgb": 22.912013390611733,
+        "mean": 31.24150538578426
+      },
+      "learning_rate": 0.0007033683215378999,
+      "seconds": 29.92427237308584
+    },
+    {
+      "epoch": 46,
+      "train_mse": 0.0026550751214169093,
+      "train_steps_by_modality": {
+        "depth": 163,
+        "occupancy": 89,
+        "costmap": 89,
+        "heatmap": 90,
+        "rgb": 169
+      },
+      "validation_mse": {
+        "depth": 0.0027438831683765682,
+        "occupancy": 0.007037164624004315,
+        "costmap": 0.0021731983126503313,
+        "heatmap": 0.001176554224609087,
+        "rgb": 0.005796143759248985,
+        "mean": 0.0037853888177778574
+      },
+      "validation_psnr_db": {
+        "depth": 29.113799847164856,
+        "occupancy": 28.94782054255128,
+        "costmap": 34.43141798719886,
+        "heatmap": 37.00837216061057,
+        "rgb": 24.130477213171112,
+        "mean": 30.726377550139336
+      },
+      "learning_rate": 0.0006913417161825446,
+      "seconds": 28.25699376105331
+    },
+    {
+      "epoch": 47,
+      "train_mse": 0.002365623450007964,
+      "train_steps_by_modality": {
+        "depth": 175,
+        "occupancy": 95,
+        "costmap": 90,
+        "heatmap": 75,
+        "rgb": 165
+      },
+      "validation_mse": {
+        "depth": 0.0020986766224571816,
+        "occupancy": 0.005853504820050957,
+        "costmap": 0.0018154791274961706,
+        "heatmap": 0.0009454486704877733,
+        "rgb": 0.007254519144124869,
+        "mean": 0.00359352567692339
+      },
+      "validation_psnr_db": {
+        "depth": 29.011532731445495,
+        "occupancy": 29.87569796098474,
+        "costmap": 35.300772003410394,
+        "heatmap": 37.27744295502644,
+        "rgb": 23.825633467315257,
+        "mean": 31.058215823636466
+      },
+      "learning_rate": 0.00067918397477265,
+      "seconds": 28.66834376892075
+    },
+    {
+      "epoch": 48,
+      "train_mse": 0.002688413000029565,
+      "train_steps_by_modality": {
+        "depth": 178,
+        "occupancy": 81,
+        "costmap": 89,
+        "heatmap": 86,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.0034538844225203823,
+        "occupancy": 0.005146744229730555,
+        "costmap": 0.0018049482714559417,
+        "heatmap": 0.000957568753316688,
+        "rgb": 0.006675055438083493,
+        "mean": 0.0036076402230214117
+      },
+      "validation_psnr_db": {
+        "depth": 28.153182328294193,
+        "occupancy": 30.365770847906397,
+        "costmap": 34.805337033820734,
+        "heatmap": 35.81298246582176,
+        "rgb": 24.360046276875813,
+        "mean": 30.69946379054378
+      },
+      "learning_rate": 0.0006669034296168852,
+      "seconds": 28.235409972956404
+    },
+    {
+      "epoch": 49,
+      "train_mse": 0.0023761191384498183,
+      "train_steps_by_modality": {
+        "depth": 174,
+        "occupancy": 77,
+        "costmap": 101,
+        "heatmap": 81,
+        "rgb": 167
+      },
+      "validation_mse": {
+        "depth": 0.0025794141402002424,
+        "occupancy": 0.005921706685411563,
+        "costmap": 0.0012936718178227441,
+        "heatmap": 0.0007963695910196596,
+        "rgb": 0.006561039248481393,
+        "mean": 0.00343044029658712
+      },
+      "validation_psnr_db": {
+        "depth": 28.14234821288555,
+        "occupancy": 29.970422955500087,
+        "costmap": 36.042965241926495,
+        "heatmap": 38.48604337241328,
+        "rgb": 24.26626733946342,
+        "mean": 31.381609424437762
+      },
+      "learning_rate": 0.0006545084971874735,
+      "seconds": 28.921230083797127
+    },
+    {
+      "epoch": 50,
+      "train_mse": 0.0028418619572691266,
+      "train_steps_by_modality": {
+        "depth": 172,
+        "occupancy": 98,
+        "costmap": 95,
+        "heatmap": 78,
+        "rgb": 157
+      },
+      "validation_mse": {
+        "depth": 0.003297169272425688,
+        "occupancy": 0.005556191378370083,
+        "costmap": 0.0014689371370574615,
+        "heatmap": 0.0007576150641802491,
+        "rgb": 0.0067745317291054465,
+        "mean": 0.003570888916227785
+      },
+      "validation_psnr_db": {
+        "depth": 27.671120923468322,
+        "occupancy": 30.052103033138728,
+        "costmap": 34.79324431382127,
+        "heatmap": 36.21568941159701,
+        "rgb": 23.90872328699621,
+        "mean": 30.528176193804306
+      },
+      "learning_rate": 0.0006420076723519612,
+      "seconds": 27.244468322955072
+    },
+    {
+      "epoch": 51,
+      "train_mse": 0.0024701322507811106,
+      "train_steps_by_modality": {
+        "depth": 187,
+        "occupancy": 79,
+        "costmap": 85,
+        "heatmap": 93,
+        "rgb": 156
+      },
+      "validation_mse": {
+        "depth": 0.0026274410209023496,
+        "occupancy": 0.0059799138592400896,
+        "costmap": 0.0017025037260383316,
+        "heatmap": 0.0010025097170809102,
+        "rgb": 0.006863766343384568,
+        "mean": 0.00363522693332925
+      },
+      "validation_psnr_db": {
+        "depth": 28.71363732165948,
+        "occupancy": 30.26714387917802,
+        "costmap": 35.216168250740814,
+        "heatmap": 38.30640090754926,
+        "rgb": 23.89998992463399,
+        "mean": 31.28066805675231
+      },
+      "learning_rate": 0.0006294095225512601,
+      "seconds": 26.939950870815665
+    },
+    {
+      "epoch": 52,
+      "train_mse": 0.0024757688249489244,
+      "train_steps_by_modality": {
+        "depth": 179,
+        "occupancy": 89,
+        "costmap": 68,
+        "heatmap": 82,
+        "rgb": 182
+      },
+      "validation_mse": {
+        "depth": 0.0025795857897416377,
+        "occupancy": 0.005028772035277345,
+        "costmap": 0.0017272632402536045,
+        "heatmap": 0.000899173069936094,
+        "rgb": 0.0068582153051263755,
+        "mean": 0.0034186018880670117
+      },
+      "validation_psnr_db": {
+        "depth": 28.691431238501902,
+        "occupancy": 29.96284091916139,
+        "costmap": 34.692778979172516,
+        "heatmap": 37.26940044686499,
+        "rgb": 24.600396994505424,
+        "mean": 31.04336971564124
+      },
+      "learning_rate": 0.0006167226819279525,
+      "seconds": 28.351154315983877
+    },
+    {
+      "epoch": 53,
+      "train_mse": 0.0024145393680858737,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 88,
+        "costmap": 94,
+        "heatmap": 90,
+        "rgb": 158
+      },
+      "validation_mse": {
+        "depth": 0.002491103281499818,
+        "occupancy": 0.004424937430788607,
+        "costmap": 0.00133043910075988,
+        "heatmap": 0.0007138198448552026,
+        "rgb": 0.006983878863846055,
+        "mean": 0.0031888357043499127
+      },
+      "validation_psnr_db": {
+        "depth": 29.207431409808528,
+        "occupancy": 30.527967809302158,
+        "costmap": 36.24162408210131,
+        "heatmap": 38.50123934222782,
+        "rgb": 24.848500139991383,
+        "mean": 31.86535255668624
+      },
+      "learning_rate": 0.0006039558454088793,
+      "seconds": 28.2501710918732
+    },
+    {
+      "epoch": 54,
+      "train_mse": 0.002651326453439348,
+      "train_steps_by_modality": {
+        "depth": 177,
+        "occupancy": 80,
+        "costmap": 61,
+        "heatmap": 85,
+        "rgb": 197
+      },
+      "validation_mse": {
+        "depth": 0.0027667833815535735,
+        "occupancy": 0.004969103242830088,
+        "costmap": 0.0014785211250354121,
+        "heatmap": 0.000935338332055835,
+        "rgb": 0.006557954345933265,
+        "mean": 0.003341540085481635
+      },
+      "validation_psnr_db": {
+        "depth": 28.54743069087206,
+        "occupancy": 30.66234186848844,
+        "costmap": 34.876470298989055,
+        "heatmap": 36.841662717117664,
+        "rgb": 24.8474256877336,
+        "mean": 31.15506625264016
+      },
+      "learning_rate": 0.0005911177627460734,
+      "seconds": 31.40064913011156
+    },
+    {
+      "epoch": 55,
+      "train_mse": 0.0024565151141465926,
+      "train_steps_by_modality": {
+        "depth": 164,
+        "occupancy": 91,
+        "costmap": 80,
+        "heatmap": 89,
+        "rgb": 176
+      },
+      "validation_mse": {
+        "depth": 0.0026285638288956964,
+        "occupancy": 0.00523522199526067,
+        "costmap": 0.0012436371616786346,
+        "heatmap": 0.000829896468025658,
+        "rgb": 0.0073437044371126425,
+        "mean": 0.0034562047781946602
+      },
+      "validation_psnr_db": {
+        "depth": 29.383082255416973,
+        "occupancy": 30.59038338650158,
+        "costmap": 36.30469656068989,
+        "heatmap": 39.52184565459276,
+        "rgb": 24.616919566126167,
+        "mean": 32.08338548466547
+      },
+      "learning_rate": 0.000578217232520115,
+      "seconds": 28.88476255000569
+    },
+    {
+      "epoch": 56,
+      "train_mse": 0.002283344574966577,
+      "train_steps_by_modality": {
+        "depth": 174,
+        "occupancy": 70,
+        "costmap": 97,
+        "heatmap": 85,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.002935880124116213,
+        "occupancy": 0.0062660118176912265,
+        "costmap": 0.0013181145190578213,
+        "heatmap": 0.000635733450609324,
+        "rgb": 0.007754344312060211,
+        "mean": 0.003782016844706959
+      },
+      "validation_psnr_db": {
+        "depth": 28.818454147495906,
+        "occupancy": 29.818898998570504,
+        "costmap": 36.691191518716124,
+        "heatmap": 39.931282570789456,
+        "rgb": 23.735154123602495,
+        "mean": 31.79899627183489
+      },
+      "learning_rate": 0.0005652630961100254,
+      "seconds": 28.554262103047222
+    },
+    {
+      "epoch": 57,
+      "train_mse": 0.002594682616184703,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 86,
+        "costmap": 91,
+        "heatmap": 90,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.002626478555612266,
+        "occupancy": 0.006439074030317392,
+        "costmap": 0.002949780030273056,
+        "heatmap": 0.002440083645019008,
+        "rgb": 0.007077100052912202,
+        "mean": 0.004306503262826784
+      },
+      "validation_psnr_db": {
+        "depth": 28.232509443170827,
+        "occupancy": 29.55103092387971,
+        "costmap": 33.4754610283096,
+        "heatmap": 35.82917920443085,
+        "rgb": 24.19172103611739,
+        "mean": 30.255980327181682
+      },
+      "learning_rate": 0.0005522642316338264,
+      "seconds": 28.732434893026948
+    },
+    {
+      "epoch": 58,
+      "train_mse": 0.0024723938535225897,
+      "train_steps_by_modality": {
+        "depth": 166,
+        "occupancy": 90,
+        "costmap": 83,
+        "heatmap": 89,
+        "rgb": 172
+      },
+      "validation_mse": {
+        "depth": 0.0018587628243646275,
+        "occupancy": 0.00574943429940807,
+        "costmap": 0.001287946266529616,
+        "heatmap": 0.0006767792772532428,
+        "rgb": 0.006788305689244428,
+        "mean": 0.0032722456713599967
+      },
+      "validation_psnr_db": {
+        "depth": 29.853186624384932,
+        "occupancy": 29.998332846279343,
+        "costmap": 36.36262198858943,
+        "heatmap": 39.77081533469395,
+        "rgb": 24.475537565077033,
+        "mean": 32.09209887180494
+      },
+      "learning_rate": 0.0005392295478639221,
+      "seconds": 28.5195322080981
+    },
+    {
+      "epoch": 59,
+      "train_mse": 0.00260908091268296,
+      "train_steps_by_modality": {
+        "depth": 185,
+        "occupancy": 93,
+        "costmap": 78,
+        "heatmap": 67,
+        "rgb": 177
+      },
+      "validation_mse": {
+        "depth": 0.0019529071432771161,
+        "occupancy": 0.00535640704684839,
+        "costmap": 0.0014147406737821358,
+        "heatmap": 0.0008773750067929439,
+        "rgb": 0.006759478329008238,
+        "mean": 0.0032721816399417653
+      },
+      "validation_psnr_db": {
+        "depth": 29.51499655900126,
+        "occupancy": 30.387046054732966,
+        "costmap": 35.78918763392967,
+        "heatmap": 38.85057882251561,
+        "rgb": 24.63993311635905,
+        "mean": 31.836348437307713
+      },
+      "learning_rate": 0.0005261679781214714,
+      "seconds": 27.69732900103554
+    },
+    {
+      "epoch": 60,
+      "train_mse": 0.002540649384050084,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 65,
+        "costmap": 95,
+        "heatmap": 83,
+        "rgb": 177
+      },
+      "validation_mse": {
+        "depth": 0.0024369492958713737,
+        "occupancy": 0.004684657402928376,
+        "costmap": 0.001327499872786575,
+        "heatmap": 0.0006404889908379926,
+        "rgb": 0.005963639795987142,
+        "mean": 0.003010647071682292
+      },
+      "validation_psnr_db": {
+        "depth": 28.616980768748206,
+        "occupancy": 30.443123663214482,
+        "costmap": 36.58819720312248,
+        "heatmap": 39.53816255404658,
+        "rgb": 24.44167240489988,
+        "mean": 31.925627318806328
+      },
+      "learning_rate": 0.0005130884741539361,
+      "seconds": 29.43040644703433
+    },
+    {
+      "epoch": 61,
+      "train_mse": 0.0025554574259088743,
+      "train_steps_by_modality": {
+        "depth": 166,
+        "occupancy": 86,
+        "costmap": 92,
+        "heatmap": 69,
+        "rgb": 187
+      },
+      "validation_mse": {
+        "depth": 0.0025763895909120846,
+        "occupancy": 0.005801494700992609,
+        "costmap": 0.0012482329835216256,
+        "heatmap": 0.0006421100152793871,
+        "rgb": 0.007441483311898385,
+        "mean": 0.0035419421205208183
+      },
+      "validation_psnr_db": {
+        "depth": 28.824576368440677,
+        "occupancy": 29.721598231241696,
+        "costmap": 35.59981485403421,
+        "heatmap": 38.53443158995176,
+        "rgb": 24.4611121627548,
+        "mean": 31.428306641284628
+      },
+      "learning_rate": 0.0004999999999999997,
+      "seconds": 29.4396713799797
+    },
+    {
+      "epoch": 62,
+      "train_mse": 0.0021795424132809178,
+      "train_steps_by_modality": {
+        "depth": 182,
+        "occupancy": 79,
+        "costmap": 84,
+        "heatmap": 92,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.0028029400434914148,
+        "occupancy": 0.004194038799242763,
+        "costmap": 0.0012413715295325448,
+        "heatmap": 0.001153910465594284,
+        "rgb": 0.006496397778391838,
+        "mean": 0.0031777317232505693
+      },
+      "validation_psnr_db": {
+        "depth": 28.45320170275715,
+        "occupancy": 30.0627542396317,
+        "costmap": 36.44986794796242,
+        "heatmap": 39.16229726499867,
+        "rgb": 24.70240448790135,
+        "mean": 31.76610512865026
+      },
+      "learning_rate": 0.00048691152584606306,
+      "seconds": 27.879554390907288
+    },
+    {
+      "epoch": 63,
+      "train_mse": 0.0022872985307943357,
+      "train_steps_by_modality": {
+        "depth": 161,
+        "occupancy": 76,
+        "costmap": 81,
+        "heatmap": 100,
+        "rgb": 182
+      },
+      "validation_mse": {
+        "depth": 0.0024457765555578386,
+        "occupancy": 0.005054577250929369,
+        "costmap": 0.0012512479556284638,
+        "heatmap": 0.0007459376304521154,
+        "rgb": 0.0065007633723629015,
+        "mean": 0.0031996605529861374
+      },
+      "validation_psnr_db": {
+        "depth": 28.915616172150408,
+        "occupancy": 30.539680362047356,
+        "costmap": 36.385538592076415,
+        "heatmap": 39.566059904428386,
+        "rgb": 25.053759434319122,
+        "mean": 32.09213089300434
+      },
+      "learning_rate": 0.00047383202187852773,
+      "seconds": 31.20266340393573
+    },
+    {
+      "epoch": 64,
+      "train_mse": 0.002173453772126474,
+      "train_steps_by_modality": {
+        "depth": 156,
+        "occupancy": 90,
+        "costmap": 91,
+        "heatmap": 79,
+        "rgb": 184
+      },
+      "validation_mse": {
+        "depth": 0.0029984773573232815,
+        "occupancy": 0.004686153552433502,
+        "costmap": 0.0011820659803763395,
+        "heatmap": 0.000740728708478855,
+        "rgb": 0.005590303746026216,
+        "mean": 0.003039545868927639
+      },
+      "validation_psnr_db": {
+        "depth": 28.92924492837831,
+        "occupancy": 30.881479051137628,
+        "costmap": 36.44028970880254,
+        "heatmap": 39.261387502564126,
+        "rgb": 25.33675733508622,
+        "mean": 32.169831705193765
+      },
+      "learning_rate": 0.00046077045213607716,
+      "seconds": 29.971554008079693
+    },
+    {
+      "epoch": 65,
+      "train_mse": 0.0024198615618001894,
+      "train_steps_by_modality": {
+        "depth": 182,
+        "occupancy": 78,
+        "costmap": 77,
+        "heatmap": 87,
+        "rgb": 176
+      },
+      "validation_mse": {
+        "depth": 0.0026700422232453194,
+        "occupancy": 0.004854801889854975,
+        "costmap": 0.0022051369730130923,
+        "heatmap": 0.0013017754843329182,
+        "rgb": 0.00773371218626077,
+        "mean": 0.003753093751341415
+      },
+      "validation_psnr_db": {
+        "depth": 28.926365542329293,
+        "occupancy": 30.860630341881958,
+        "costmap": 34.620688451350254,
+        "heatmap": 36.52617144406835,
+        "rgb": 24.74926140769664,
+        "mean": 31.1366234374653
+      },
+      "learning_rate": 0.00044773576836617293,
+      "seconds": 29.63601636700332
+    },
+    {
+      "epoch": 66,
+      "train_mse": 0.0023894773441103705,
+      "train_steps_by_modality": {
+        "depth": 158,
+        "occupancy": 97,
+        "costmap": 92,
+        "heatmap": 96,
+        "rgb": 157
+      },
+      "validation_mse": {
+        "depth": 0.002393934804584003,
+        "occupancy": 0.006250037516616026,
+        "costmap": 0.0014700544520059743,
+        "heatmap": 0.0009672080759628443,
+        "rgb": 0.0068689384918090785,
+        "mean": 0.0035900346681955854
+      },
+      "validation_psnr_db": {
+        "depth": 28.857129084205376,
+        "occupancy": 29.961709526042156,
+        "costmap": 36.46879663427343,
+        "heatmap": 40.052086246861045,
+        "rgb": 24.96017822697003,
+        "mean": 32.059979943670406
+      },
+      "learning_rate": 0.0004347369038899739,
+      "seconds": 28.32916642492637
+    },
+    {
+      "epoch": 67,
+      "train_mse": 0.002105591352419651,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 80,
+        "costmap": 88,
+        "heatmap": 96,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.002946363154074384,
+        "occupancy": 0.00587752768276712,
+        "costmap": 0.0012372738537022895,
+        "heatmap": 0.0008414815417078595,
+        "rgb": 0.006715569127764966,
+        "mean": 0.0035236430720033242
+      },
+      "validation_psnr_db": {
+        "depth": 28.82368526239431,
+        "occupancy": 30.137339677478696,
+        "costmap": 37.044961129162814,
+        "heatmap": 39.92169210811164,
+        "rgb": 24.558684682655144,
+        "mean": 32.097272571960524
+      },
+      "learning_rate": 0.00042178276747988416,
+      "seconds": 30.63350221887231
+    },
+    {
+      "epoch": 68,
+      "train_mse": 0.0024491531344619944,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 95,
+        "costmap": 86,
+        "heatmap": 78,
+        "rgb": 171
+      },
+      "validation_mse": {
+        "depth": 0.002066337957835963,
+        "occupancy": 0.00447044258423072,
+        "costmap": 0.0013082345823123534,
+        "heatmap": 0.0007838038249651112,
+        "rgb": 0.006637764076003805,
+        "mean": 0.0030533166050695907
+      },
+      "validation_psnr_db": {
+        "depth": 29.7757022413622,
+        "occupancy": 30.3087811429497,
+        "costmap": 36.40207394233542,
+        "heatmap": 39.370368601661966,
+        "rgb": 25.04349815680618,
+        "mean": 32.18008481702309
+      },
+      "learning_rate": 0.000408882237253926,
+      "seconds": 29.6324407949578
+    },
+    {
+      "epoch": 69,
+      "train_mse": 0.0026350713906003877,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 94,
+        "costmap": 79,
+        "heatmap": 75,
+        "rgb": 183
+      },
+      "validation_mse": {
+        "depth": 0.0019361442343021433,
+        "occupancy": 0.004468247829613069,
+        "costmap": 0.0010742137923848026,
+        "heatmap": 0.0011479834759787384,
+        "rgb": 0.005753063021175977,
+        "mean": 0.002875930470690946
+      },
+      "validation_psnr_db": {
+        "depth": 29.992249005003615,
+        "occupancy": 30.64341477286017,
+        "costmap": 36.76966545647122,
+        "heatmap": 40.01729775043598,
+        "rgb": 25.294353387724936,
+        "mean": 32.54339607449918
+      },
+      "learning_rate": 0.0003960441545911199,
+      "seconds": 28.032707022037357
+    },
+    {
+      "epoch": 70,
+      "train_mse": 0.0023307961114073807,
+      "train_steps_by_modality": {
+        "depth": 153,
+        "occupancy": 78,
+        "costmap": 97,
+        "heatmap": 98,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.0026692957374810553,
+        "occupancy": 0.005344730040734349,
+        "costmap": 0.0009601703028844591,
+        "heatmap": 0.00042109426966716355,
+        "rgb": 0.006896839079369481,
+        "mean": 0.0032584258860273016
+      },
+      "validation_psnr_db": {
+        "depth": 29.063406490259233,
+        "occupancy": 30.672003465784528,
+        "costmap": 36.993436075577755,
+        "heatmap": 40.51752257783903,
+        "rgb": 24.83084790271903,
+        "mean": 32.41544330243592
+      },
+      "learning_rate": 0.00038327731807204696,
+      "seconds": 30.73799646203406
+    },
+    {
+      "epoch": 71,
+      "train_mse": 0.002233782227629793,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 90,
+        "costmap": 83,
+        "heatmap": 83,
+        "rgb": 171
+      },
+      "validation_mse": {
+        "depth": 0.002739055172747208,
+        "occupancy": 0.005457913407654915,
+        "costmap": 0.0013070167166612616,
+        "heatmap": 0.0007591177760938687,
+        "rgb": 0.00723638716347826,
+        "mean": 0.0034998980473271027
+      },
+      "validation_psnr_db": {
+        "depth": 29.274002582420085,
+        "occupancy": 30.424036116502105,
+        "costmap": 36.600100714202156,
+        "heatmap": 39.589281777733305,
+        "rgb": 24.73653671727756,
+        "mean": 32.124791581627036
+      },
+      "learning_rate": 0.0003705904774487393,
+      "seconds": 28.567836634116247
+    },
+    {
+      "epoch": 72,
+      "train_mse": 0.0022459395249226567,
+      "train_steps_by_modality": {
+        "depth": 167,
+        "occupancy": 91,
+        "costmap": 97,
+        "heatmap": 98,
+        "rgb": 147
+      },
+      "validation_mse": {
+        "depth": 0.0029809009946701634,
+        "occupancy": 0.003679013818125693,
+        "costmap": 0.0015353331778492753,
+        "heatmap": 0.00047376983320646104,
+        "rgb": 0.005316019384837192,
+        "mean": 0.002797007441737757
+      },
+      "validation_psnr_db": {
+        "depth": 28.437950888161915,
+        "occupancy": 31.127728482706654,
+        "costmap": 36.7043716692083,
+        "heatmap": 41.037858685845684,
+        "rgb": 25.431378307562117,
+        "mean": 32.54785760669693
+      },
+      "learning_rate": 0.0003579923276480383,
+      "seconds": 26.795905753970146
+    },
+    {
+      "epoch": 73,
+      "train_mse": 0.0022446904116198616,
+      "train_steps_by_modality": {
+        "depth": 171,
+        "occupancy": 99,
+        "costmap": 66,
+        "heatmap": 84,
+        "rgb": 180
+      },
+      "validation_mse": {
+        "depth": 0.0023094242464544047,
+        "occupancy": 0.005410632265718757,
+        "costmap": 0.0016725271835740488,
+        "heatmap": 0.0007079850918469472,
+        "rgb": 0.006303342356760468,
+        "mean": 0.003280782228870925
+      },
+      "validation_psnr_db": {
+        "depth": 29.35412922377712,
+        "occupancy": 30.80935936189783,
+        "costmap": 36.316959147429344,
+        "heatmap": 39.5415514399334,
+        "rgb": 24.849675088986476,
+        "mean": 32.17433485240484
+      },
+      "learning_rate": 0.000345491502812526,
+      "seconds": 29.093615798046812
+    },
+    {
+      "epoch": 74,
+      "train_mse": 0.0023996250174438197,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 87,
+        "costmap": 80,
+        "heatmap": 84,
+        "rgb": 169
+      },
+      "validation_mse": {
+        "depth": 0.0028218098644477627,
+        "occupancy": 0.004843936367655665,
+        "costmap": 0.0008319395280220002,
+        "heatmap": 0.0005381064058585454,
+        "rgb": 0.007166476836169345,
+        "mean": 0.0032404538004306635
+      },
+      "validation_psnr_db": {
+        "depth": 28.584449292959974,
+        "occupancy": 30.834856665360387,
+        "costmap": 37.095963063391416,
+        "heatmap": 40.217732366466116,
+        "rgb": 24.8542991019557,
+        "mean": 32.31746009802672
+      },
+      "learning_rate": 0.0003330965703831143,
+      "seconds": 28.899400451919064
+    },
+    {
+      "epoch": 75,
+      "train_mse": 0.0022829548266364934,
+      "train_steps_by_modality": {
+        "depth": 191,
+        "occupancy": 68,
+        "costmap": 85,
+        "heatmap": 82,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.0021635672989456602,
+        "occupancy": 0.0058084344054805115,
+        "costmap": 0.0011198099731094164,
+        "heatmap": 0.0004612963882916827,
+        "rgb": 0.006407858438453534,
+        "mean": 0.003192193300856161
+      },
+      "validation_psnr_db": {
+        "depth": 29.009895193738437,
+        "occupancy": 30.56796050801824,
+        "costmap": 37.18965777319803,
+        "heatmap": 40.74532803421613,
+        "rgb": 25.593471010501887,
+        "mean": 32.621262503934545
+      },
+      "learning_rate": 0.0003208160252273496,
+      "seconds": 27.865816281875595
+    },
+    {
+      "epoch": 76,
+      "train_mse": 0.0020339722217439277,
+      "train_steps_by_modality": {
+        "depth": 178,
+        "occupancy": 82,
+        "costmap": 81,
+        "heatmap": 91,
+        "rgb": 168
+      },
+      "validation_mse": {
+        "depth": 0.002459374788385402,
+        "occupancy": 0.00580523838410348,
+        "costmap": 0.0012212557851146106,
+        "heatmap": 0.0008952900918504585,
+        "rgb": 0.006227444795917513,
+        "mean": 0.003321720769074292
+      },
+      "validation_psnr_db": {
+        "depth": 29.124288536026135,
+        "occupancy": 30.28384277966331,
+        "costmap": 36.048317514974684,
+        "heatmap": 39.10052093563846,
+        "rgb": 25.499977626087816,
+        "mean": 32.01138947847808
+      },
+      "learning_rate": 0.00030865828381745485,
+      "seconds": 29.126308581093326
+    },
+    {
+      "epoch": 77,
+      "train_mse": 0.002454014919464195,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 78,
+        "costmap": 111,
+        "heatmap": 69,
+        "rgb": 169
+      },
+      "validation_mse": {
+        "depth": 0.0027013489323306,
+        "occupancy": 0.006258680019527674,
+        "costmap": 0.001930494735764417,
+        "heatmap": 0.0005770057864032828,
+        "rgb": 0.006732252969716986,
+        "mean": 0.003639956488748592
+      },
+      "validation_psnr_db": {
+        "depth": 28.937482546247434,
+        "occupancy": 29.936378763189126,
+        "costmap": 35.898356081194386,
+        "heatmap": 39.248605689539914,
+        "rgb": 24.906090649654193,
+        "mean": 31.785382745965013
+      },
+      "learning_rate": 0.0002966316784620997,
+      "seconds": 27.40769022400491
+    },
+    {
+      "epoch": 78,
+      "train_mse": 0.0021382792007837753,
+      "train_steps_by_modality": {
+        "depth": 175,
+        "occupancy": 91,
+        "costmap": 89,
+        "heatmap": 81,
+        "rgb": 164
+      },
+      "validation_mse": {
+        "depth": 0.0029130311757196775,
+        "occupancy": 0.004446359886060236,
+        "costmap": 0.0009268931446260669,
+        "heatmap": 0.0006836325933868971,
+        "rgb": 0.006611024107163151,
+        "mean": 0.0031161881813912056
+      },
+      "validation_psnr_db": {
+        "depth": 28.49829290717768,
+        "occupancy": 31.193371484377206,
+        "costmap": 36.96049804271332,
+        "heatmap": 39.025324740223844,
+        "rgb": 25.436509675112347,
+        "mean": 32.22279936992088
+      },
+      "learning_rate": 0.00028474445159585226,
+      "seconds": 28.30051008495502
+    },
+    {
+      "epoch": 79,
+      "train_mse": 0.002075410351258142,
+      "train_steps_by_modality": {
+        "depth": 165,
+        "occupancy": 88,
+        "costmap": 91,
+        "heatmap": 93,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.002477013953870887,
+        "occupancy": 0.004486612521254251,
+        "costmap": 0.0013387426637968423,
+        "heatmap": 0.0005158832682354841,
+        "rgb": 0.00743928585951734,
+        "mean": 0.0032515076533349606
+      },
+      "validation_psnr_db": {
+        "depth": 29.06031659146845,
+        "occupancy": 31.253219460672483,
+        "costmap": 36.60106193534605,
+        "heatmap": 40.358339197963105,
+        "rgb": 24.264885310369426,
+        "mean": 32.3075644991639
+      },
+      "learning_rate": 0.00027300475013022636,
+      "seconds": 27.79616126208566
+    },
+    {
+      "epoch": 80,
+      "train_mse": 0.0022078080953868567,
+      "train_steps_by_modality": {
+        "depth": 170,
+        "occupancy": 111,
+        "costmap": 76,
+        "heatmap": 88,
+        "rgb": 155
+      },
+      "validation_mse": {
+        "depth": 0.003132197082676511,
+        "occupancy": 0.0034751791649291087,
+        "costmap": 0.000979512359360039,
+        "heatmap": 0.0010565237466329967,
+        "rgb": 0.006115982697034876,
+        "mean": 0.002951879010126706
+      },
+      "validation_psnr_db": {
+        "depth": 28.661128211217658,
+        "occupancy": 31.227232968179667,
+        "costmap": 37.333546158021704,
+        "heatmap": 39.52129839740698,
+        "rgb": 25.290000445416197,
+        "mean": 32.406641236048436
+      },
+      "learning_rate": 0.0002614206198701955,
+      "seconds": 27.242531488882378
+    },
+    {
+      "epoch": 81,
+      "train_mse": 0.002454149531800643,
+      "train_steps_by_modality": {
+        "depth": 183,
+        "occupancy": 75,
+        "costmap": 75,
+        "heatmap": 80,
+        "rgb": 187
+      },
+      "validation_mse": {
+        "depth": 0.0024635227697823816,
+        "occupancy": 0.004901659499915291,
+        "costmap": 0.0012675534959877648,
+        "heatmap": 0.0004126054404372957,
+        "rgb": 0.006282365929412966,
+        "mean": 0.0030655414271071393
+      },
+      "validation_psnr_db": {
+        "depth": 29.584451538242135,
+        "occupancy": 30.653647428324973,
+        "costmap": 36.99194212633454,
+        "heatmap": 40.79772664518494,
+        "rgb": 25.41944913313114,
+        "mean": 32.689443374243545
+      },
+      "learning_rate": 0.00024999999999999984,
+      "seconds": 29.21582248993218
+    },
+    {
+      "epoch": 82,
+      "train_mse": 0.0022151379289895583,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 85,
+        "costmap": 81,
+        "heatmap": 91,
+        "rgb": 170
+      },
+      "validation_mse": {
+        "depth": 0.00205212475783709,
+        "occupancy": 0.004268256754989529,
+        "costmap": 0.0011415658472186704,
+        "heatmap": 0.0005852589025986769,
+        "rgb": 0.006474434550101351,
+        "mean": 0.0029043281625490635
+      },
+      "validation_psnr_db": {
+        "depth": 30.00545932314997,
+        "occupancy": 30.918950492210108,
+        "costmap": 37.163088902404496,
+        "heatmap": 40.49091363321343,
+        "rgb": 25.417756924515913,
+        "mean": 32.799233855098784
+      },
+      "learning_rate": 0.00023875071764202534,
+      "seconds": 29.1729468931444
+    },
+    {
+      "epoch": 83,
+      "train_mse": 0.0022753938056606178,
+      "train_steps_by_modality": {
+        "depth": 163,
+        "occupancy": 96,
+        "costmap": 91,
+        "heatmap": 92,
+        "rgb": 158
+      },
+      "validation_mse": {
+        "depth": 0.0032019027259795824,
+        "occupancy": 0.004641654416951092,
+        "costmap": 0.0008709115757786398,
+        "heatmap": 0.0005035197491451981,
+        "rgb": 0.005888046751756014,
+        "mean": 0.0030212070439221057
+      },
+      "validation_psnr_db": {
+        "depth": 28.580122303373734,
+        "occupancy": 30.71891189736732,
+        "costmap": 37.201618483859264,
+        "heatmap": 40.32072551235921,
+        "rgb": 25.095398947836802,
+        "mean": 32.38335542895926
+      },
+      "learning_rate": 0.00022768048249248638,
+      "seconds": 28.201218612026423
+    },
+    {
+      "epoch": 84,
+      "train_mse": 0.0023075009573411383,
+      "train_steps_by_modality": {
+        "depth": 174,
+        "occupancy": 94,
+        "costmap": 90,
+        "heatmap": 82,
+        "rgb": 160
+      },
+      "validation_mse": {
+        "depth": 0.0022400407178793103,
+        "occupancy": 0.004841822633251367,
+        "costmap": 0.0010584444746402572,
+        "heatmap": 0.0004641835589104125,
+        "rgb": 0.006291043488696839,
+        "mean": 0.0029791069746756367
+      },
+      "validation_psnr_db": {
+        "depth": 29.319186628874792,
+        "occupancy": 31.398581790346597,
+        "costmap": 36.905621210317484,
+        "heatmap": 41.08500525889693,
+        "rgb": 25.396858577715008,
+        "mean": 32.82105069323016
+      },
+      "learning_rate": 0.00021679688153758325,
+      "seconds": 27.231279591098428
+    },
+    {
+      "epoch": 85,
+      "train_mse": 0.002192456044525291,
+      "train_steps_by_modality": {
+        "depth": 182,
+        "occupancy": 91,
+        "costmap": 85,
+        "heatmap": 76,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.0023725342163945446,
+        "occupancy": 0.004606901873355835,
+        "costmap": 0.0008508759133797463,
+        "heatmap": 0.00042762065125619603,
+        "rgb": 0.006574808270670474,
+        "mean": 0.002966548185011359
+      },
+      "validation_psnr_db": {
+        "depth": 29.340184431847824,
+        "occupancy": 30.846225197236055,
+        "costmap": 37.377081971652245,
+        "heatmap": 41.144296520057,
+        "rgb": 24.807446604527687,
+        "mean": 32.70304694506416
+      },
+      "learning_rate": 0.00020610737385376327,
+      "seconds": 29.089172697858885
+    },
+    {
+      "epoch": 86,
+      "train_mse": 0.0023176034513941583,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 97,
+        "costmap": 77,
+        "heatmap": 90,
+        "rgb": 156
+      },
+      "validation_mse": {
+        "depth": 0.003059252650321772,
+        "occupancy": 0.004939686347723991,
+        "costmap": 0.001095232086906132,
+        "heatmap": 0.00042057156168892916,
+        "rgb": 0.006623045706267779,
+        "mean": 0.00322755767058172
+      },
+      "validation_psnr_db": {
+        "depth": 29.04118435667504,
+        "occupancy": 30.769314063129343,
+        "costmap": 37.37759903648472,
+        "heatmap": 41.0935416839908,
+        "rgb": 24.5345177072861,
+        "mean": 32.5632313695132
+      },
+      "learning_rate": 0.00019561928549563946,
+      "seconds": 28.560153570957482
+    },
+    {
+      "epoch": 87,
+      "train_mse": 0.002138657730082135,
+      "train_steps_by_modality": {
+        "depth": 176,
+        "occupancy": 79,
+        "costmap": 78,
+        "heatmap": 84,
+        "rgb": 183
+      },
+      "validation_mse": {
+        "depth": 0.0022147991646003598,
+        "occupancy": 0.004888852469270609,
+        "costmap": 0.0008977877071932502,
+        "heatmap": 0.0005190349592238716,
+        "rgb": 0.006512084316151838,
+        "mean": 0.003006511723287986
+      },
+      "validation_psnr_db": {
+        "depth": 29.164315216339837,
+        "occupancy": 30.202334998830096,
+        "costmap": 37.28583033053901,
+        "heatmap": 40.386912569820986,
+        "rgb": 25.420896380337318,
+        "mean": 32.492057899173446
+      },
+      "learning_rate": 0.00018533980447508116,
+      "seconds": 29.579117116052657
+    },
+    {
+      "epoch": 88,
+      "train_mse": 0.002111158546185834,
+      "train_steps_by_modality": {
+        "depth": 179,
+        "occupancy": 97,
+        "costmap": 88,
+        "heatmap": 88,
+        "rgb": 148
+      },
+      "validation_mse": {
+        "depth": 0.002901905699723607,
+        "occupancy": 0.004334009181345916,
+        "costmap": 0.0011224884125719352,
+        "heatmap": 0.00038287612470513623,
+        "rgb": 0.007096041356109911,
+        "mean": 0.003167464154891301
+      },
+      "validation_psnr_db": {
+        "depth": 28.940688927374588,
+        "occupancy": 31.00491103100314,
+        "costmap": 37.21053307920985,
+        "heatmap": 41.316777286967955,
+        "rgb": 25.145254781783425,
+        "mean": 32.72363302126779
+      },
+      "learning_rate": 0.00017527597583490804,
+      "seconds": 27.139939529122785
+    },
+    {
+      "epoch": 89,
+      "train_mse": 0.0023986288727405737,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 80,
+        "costmap": 74,
+        "heatmap": 74,
+        "rgb": 192
+      },
+      "validation_mse": {
+        "depth": 0.0029420448134058258,
+        "occupancy": 0.0061103386724425945,
+        "costmap": 0.0009035669069514066,
+        "heatmap": 0.0004170635306258595,
+        "rgb": 0.006310326047241688,
+        "mean": 0.003336667994133475
+      },
+      "validation_psnr_db": {
+        "depth": 29.291759054596785,
+        "occupancy": 30.769662100359028,
+        "costmap": 37.38714056310527,
+        "heatmap": 40.988380982745966,
+        "rgb": 25.802121481996863,
+        "mean": 32.84781283656078
+      },
+      "learning_rate": 0.00016543469682057086,
+      "seconds": 30.018174269003794
+    },
+    {
+      "epoch": 90,
+      "train_mse": 0.0021394577840662047,
+      "train_steps_by_modality": {
+        "depth": 177,
+        "occupancy": 69,
+        "costmap": 88,
+        "heatmap": 85,
+        "rgb": 181
+      },
+      "validation_mse": {
+        "depth": 0.003067541547352448,
+        "occupancy": 0.0044649069596845135,
+        "costmap": 0.0008591761824290087,
+        "heatmap": 0.0008978569376773117,
+        "rgb": 0.005373531014710251,
+        "mean": 0.002932602528370707
+      },
+      "validation_psnr_db": {
+        "depth": 29.037153915183954,
+        "occupancy": 30.18341236560317,
+        "costmap": 37.41061058801088,
+        "heatmap": 40.631439800439885,
+        "rgb": 25.516844387650565,
+        "mean": 32.555892211377696
+      },
+      "learning_rate": 0.00015582271215312275,
+      "seconds": 29.539302001008764
+    },
+    {
+      "epoch": 91,
+      "train_mse": 0.0022159535313251884,
+      "train_steps_by_modality": {
+        "depth": 198,
+        "occupancy": 77,
+        "costmap": 81,
+        "heatmap": 78,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.002323659783643153,
+        "occupancy": 0.004984746262683378,
+        "costmap": 0.0008533989478867928,
+        "heatmap": 0.0005580632791861717,
+        "rgb": 0.006355526022768269,
+        "mean": 0.0030150788592335533
+      },
+      "validation_psnr_db": {
+        "depth": 29.470556175960994,
+        "occupancy": 31.110608380366372,
+        "costmap": 37.871712650096455,
+        "heatmap": 41.303905114608924,
+        "rgb": 24.849884788636544,
+        "mean": 32.92133342193385
+      },
+      "learning_rate": 0.0001464466094067261,
+      "seconds": 27.87992307310924
+    },
+    {
+      "epoch": 92,
+      "train_mse": 0.002631987758646422,
+      "train_steps_by_modality": {
+        "depth": 162,
+        "occupancy": 78,
+        "costmap": 86,
+        "heatmap": 79,
+        "rgb": 195
+      },
+      "validation_mse": {
+        "depth": 0.0028429941966250124,
+        "occupancy": 0.004402356937336865,
+        "costmap": 0.0016969257608757794,
+        "heatmap": 0.00037144469640932383,
+        "rgb": 0.006190585179461373,
+        "mean": 0.0031008613541416707
+      },
+      "validation_psnr_db": {
+        "depth": 28.477797257310538,
+        "occupancy": 31.298936034914163,
+        "costmap": 37.01820479379532,
+        "heatmap": 41.301578919056844,
+        "rgb": 25.453656303116254,
+        "mean": 32.71003466163862
+      },
+      "learning_rate": 0.00013731281449385602,
+      "seconds": 31.27846468403004
+    },
+    {
+      "epoch": 93,
+      "train_mse": 0.002096843497984082,
+      "train_steps_by_modality": {
+        "depth": 171,
+        "occupancy": 79,
+        "costmap": 77,
+        "heatmap": 93,
+        "rgb": 180
+      },
+      "validation_mse": {
+        "depth": 0.002445328083316175,
+        "occupancy": 0.004493437009336453,
+        "costmap": 0.0011471465626932008,
+        "heatmap": 0.0008992701883067235,
+        "rgb": 0.006102285984929444,
+        "mean": 0.0030174935657163995
+      },
+      "validation_psnr_db": {
+        "depth": 29.1460501889323,
+        "occupancy": 30.968158235223363,
+        "costmap": 36.963797235495186,
+        "heatmap": 40.453037467055275,
+        "rgb": 25.624914063762414,
+        "mean": 32.63119143809371
+      },
+      "learning_rate": 0.00012842758726130284,
+      "seconds": 28.929865321842954
+    },
+    {
+      "epoch": 94,
+      "train_mse": 0.002212601621868089,
+      "train_steps_by_modality": {
+        "depth": 181,
+        "occupancy": 94,
+        "costmap": 77,
+        "heatmap": 82,
+        "rgb": 166
+      },
+      "validation_mse": {
+        "depth": 0.0025436345943793035,
+        "occupancy": 0.006447433482309053,
+        "costmap": 0.0009813700172445453,
+        "heatmap": 0.000814553044518915,
+        "rgb": 0.005828709533994293,
+        "mean": 0.003323140134489222
+      },
+      "validation_psnr_db": {
+        "depth": 29.284932994593337,
+        "occupancy": 30.40202722035481,
+        "costmap": 36.97564258563245,
+        "heatmap": 40.5301111016746,
+        "rgb": 26.470578542489648,
+        "mean": 32.73265848894897
+      },
+      "learning_rate": 0.00011979701719998439,
+      "seconds": 26.45811364497058
+    },
+    {
+      "epoch": 95,
+      "train_mse": 0.00239862124948786,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 92,
+        "costmap": 72,
+        "heatmap": 78,
+        "rgb": 185
+      },
+      "validation_mse": {
+        "depth": 0.0022912286141137076,
+        "occupancy": 0.004411347021636579,
+        "costmap": 0.0018407158235681385,
+        "heatmap": 0.00034896567472565546,
+        "rgb": 0.005809419979211978,
+        "mean": 0.0029403354226512114
+      },
+      "validation_psnr_db": {
+        "depth": 29.723350630121924,
+        "occupancy": 30.93246061601415,
+        "costmap": 36.73655357793493,
+        "heatmap": 41.39637819686023,
+        "rgb": 25.671958093706696,
+        "mean": 32.89214022292759
+      },
+      "learning_rate": 0.00011142701927151441,
+      "seconds": 29.56535586877726
+    },
+    {
+      "epoch": 96,
+      "train_mse": 0.002215925749210328,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 89,
+        "costmap": 97,
+        "heatmap": 86,
+        "rgb": 155
+      },
+      "validation_mse": {
+        "depth": 0.0028306231874416377,
+        "occupancy": 0.005250729624094674,
+        "costmap": 0.0014417019392567454,
+        "heatmap": 0.0008656824559996797,
+        "rgb": 0.007560796298397084,
+        "mean": 0.003589906701037964
+      },
+      "validation_psnr_db": {
+        "depth": 29.364898482721944,
+        "occupancy": 30.497124900770423,
+        "costmap": 36.77321011766335,
+        "heatmap": 40.65741701024337,
+        "rgb": 24.726604717261623,
+        "mean": 32.40385104573214
+      },
+      "learning_rate": 0.00010332332985438224,
+      "seconds": 27.675794157898054
+    },
+    {
+      "epoch": 97,
+      "train_mse": 0.002194036901144045,
+      "train_steps_by_modality": {
+        "depth": 169,
+        "occupancy": 87,
+        "costmap": 77,
+        "heatmap": 99,
+        "rgb": 168
+      },
+      "validation_mse": {
+        "depth": 0.0032549390081031662,
+        "occupancy": 0.003923197826225078,
+        "costmap": 0.0009841388193510487,
+        "heatmap": 0.0008317291133910961,
+        "rgb": 0.006249374024466508,
+        "mean": 0.0030486757583073794
+      },
+      "validation_psnr_db": {
+        "depth": 29.38973546336193,
+        "occupancy": 31.389424527087417,
+        "costmap": 37.42064621678446,
+        "heatmap": 40.73464773549012,
+        "rgb": 25.16011305391176,
+        "mean": 32.818913399327144
+      },
+      "learning_rate": 9.549150281252622e-05,
+      "seconds": 29.652163720922545
+    },
+    {
+      "epoch": 98,
+      "train_mse": 0.0025364153323895757,
+      "train_steps_by_modality": {
+        "depth": 154,
+        "occupancy": 81,
+        "costmap": 94,
+        "heatmap": 77,
+        "rgb": 194
+      },
+      "validation_mse": {
+        "depth": 0.002379511170955892,
+        "occupancy": 0.005184886090622361,
+        "costmap": 0.0008176663615005156,
+        "heatmap": 0.0004839327793888515,
+        "rgb": 0.005473193841882878,
+        "mean": 0.002867838048870099
+      },
+      "validation_psnr_db": {
+        "depth": 29.071211754774804,
+        "occupancy": 30.759829721762962,
+        "costmap": 37.564700810606396,
+        "heatmap": 40.082596868146084,
+        "rgb": 25.61990219339033,
+        "mean": 32.61964826973612
+      },
+      "learning_rate": 8.793690568899217e-05,
+      "seconds": 31.560610858956352
+    },
+    {
+      "epoch": 99,
+      "train_mse": 0.002427461666277395,
+      "train_steps_by_modality": {
+        "depth": 178,
+        "occupancy": 92,
+        "costmap": 65,
+        "heatmap": 81,
+        "rgb": 184
+      },
+      "validation_mse": {
+        "depth": 0.001958838507157957,
+        "occupancy": 0.004963854652386444,
+        "costmap": 0.0018367662218628943,
+        "heatmap": 0.0010261179098354962,
+        "rgb": 0.0057354180737295085,
+        "mean": 0.0031041990729944605
+      },
+      "validation_psnr_db": {
+        "depth": 30.09913948940619,
+        "occupancy": 31.238807747364618,
+        "costmap": 36.823299206316314,
+        "heatmap": 40.991631446560405,
+        "rgb": 25.69025582813188,
+        "mean": 32.96862674355588
+      },
+      "learning_rate": 8.066471602728794e-05,
+      "seconds": 29.609447381924838
+    },
+    {
+      "epoch": 100,
+      "train_mse": 0.0020679893043021973,
+      "train_steps_by_modality": {
+        "depth": 146,
+        "occupancy": 91,
+        "costmap": 85,
+        "heatmap": 97,
+        "rgb": 181
+      },
+      "validation_mse": {
+        "depth": 0.002714300175688954,
+        "occupancy": 0.0040296181590141105,
+        "costmap": 0.0009645123292203709,
+        "heatmap": 0.0003919346330197489,
+        "rgb": 0.0051192953218964655,
+        "mean": 0.0026439321237679302
+      },
+      "validation_psnr_db": {
+        "depth": 28.84531264376896,
+        "occupancy": 30.782287868033862,
+        "costmap": 37.491392902063,
+        "heatmap": 41.665824923915714,
+        "rgb": 25.885473465881734,
+        "mean": 32.93405836073266
+      },
+      "learning_rate": 7.367991782295384e-05,
+      "seconds": 29.75235133804381
+    },
+    {
+      "epoch": 101,
+      "train_mse": 0.002157843725033217,
+      "train_steps_by_modality": {
+        "depth": 161,
+        "occupancy": 85,
+        "costmap": 88,
+        "heatmap": 86,
+        "rgb": 180
+      },
+      "validation_mse": {
+        "depth": 0.0023822560033295304,
+        "occupancy": 0.0036651823409354417,
+        "costmap": 0.0009157751142589,
+        "heatmap": 0.000465407837358119,
+        "rgb": 0.005565036498915611,
+        "mean": 0.00259873155895952
+      },
+      "validation_psnr_db": {
+        "depth": 29.35913851649356,
+        "occupancy": 30.382885157993208,
+        "costmap": 37.44287697394343,
+        "heatmap": 41.576837600908306,
+        "rgb": 26.183582432620472,
+        "mean": 32.9890641363918
+      },
+      "learning_rate": 6.698729810778058e-05,
+      "seconds": 29.82632240699604
+    },
+    {
+      "epoch": 102,
+      "train_mse": 0.001871779474216358,
+      "train_steps_by_modality": {
+        "depth": 189,
+        "occupancy": 89,
+        "costmap": 86,
+        "heatmap": 78,
+        "rgb": 158
+      },
+      "validation_mse": {
+        "depth": 0.002696875380934216,
+        "occupancy": 0.0046205343221825184,
+        "costmap": 0.0020165062254212294,
+        "heatmap": 0.0004883205871616761,
+        "rgb": 0.006390770059725683,
+        "mean": 0.0032426013150850643
+      },
+      "validation_psnr_db": {
+        "depth": 29.185357324982167,
+        "occupancy": 30.70103379182748,
+        "costmap": 36.88975522949075,
+        "heatmap": 40.83630171808857,
+        "rgb": 25.16559792741203,
+        "mean": 32.5556091983602
+      },
+      "learning_rate": 6.0591443669017306e-05,
+      "seconds": 26.21110640699044
+    },
+    {
+      "epoch": 103,
+      "train_mse": 0.0021418261693543173,
+      "train_steps_by_modality": {
+        "depth": 175,
+        "occupancy": 70,
+        "costmap": 96,
+        "heatmap": 85,
+        "rgb": 174
+      },
+      "validation_mse": {
+        "depth": 0.0026053476774702882,
+        "occupancy": 0.005072624107318309,
+        "costmap": 0.0007524935838066287,
+        "heatmap": 0.00048120244112700067,
+        "rgb": 0.005470990306801266,
+        "mean": 0.0028765316233046985
+      },
+      "validation_psnr_db": {
+        "depth": 29.433617573357115,
+        "occupancy": 31.09630068884697,
+        "costmap": 37.88731895299596,
+        "heatmap": 40.91283645713574,
+        "rgb": 25.399543443588453,
+        "mean": 32.94592342318485
+      },
+      "learning_rate": 5.4496737905816055e-05,
+      "seconds": 29.79735324997455
+    },
+    {
+      "epoch": 104,
+      "train_mse": 0.0021738270534403152,
+      "train_steps_by_modality": {
+        "depth": 167,
+        "occupancy": 94,
+        "costmap": 88,
+        "heatmap": 81,
+        "rgb": 170
+      },
+      "validation_mse": {
+        "depth": 0.0023254932214816413,
+        "occupancy": 0.004565423287810215,
+        "costmap": 0.0008114608608593699,
+        "heatmap": 0.0006013638727482532,
+        "rgb": 0.0068095161340251155,
+        "mean": 0.003022651475384919
+      },
+      "validation_psnr_db": {
+        "depth": 29.210240531163077,
+        "occupancy": 31.064328215620883,
+        "costmap": 37.87385340695104,
+        "heatmap": 41.07097359920167,
+        "rgb": 25.723558039763244,
+        "mean": 32.988590758539985
+      },
+      "learning_rate": 4.870735782506975e-05,
+      "seconds": 28.4068645699881
+    },
+    {
+      "epoch": 105,
+      "train_mse": 0.002159030322663966,
+      "train_steps_by_modality": {
+        "depth": 174,
+        "occupancy": 89,
+        "costmap": 87,
+        "heatmap": 79,
+        "rgb": 171
+      },
+      "validation_mse": {
+        "depth": 0.0020226323168673036,
+        "occupancy": 0.005066117058352877,
+        "costmap": 0.0008278206161978435,
+        "heatmap": 0.0004763657243529451,
+        "rgb": 0.006396029823614906,
+        "mean": 0.002957793107877175
+      },
+      "validation_psnr_db": {
+        "depth": 29.377809914661,
+        "occupancy": 30.788561149136008,
+        "costmap": 37.843024310779434,
+        "heatmap": 41.48440020230557,
+        "rgb": 25.09847305222256,
+        "mean": 32.91845372582092
+      },
+      "learning_rate": 4.3227271178699475e-05,
+      "seconds": 27.63124976400286
+    },
+    {
+      "epoch": 106,
+      "train_mse": 0.0018462532106809705,
+      "train_steps_by_modality": {
+        "depth": 156,
+        "occupancy": 90,
+        "costmap": 93,
+        "heatmap": 98,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.0023043115571555165,
+        "occupancy": 0.005516432012680323,
+        "costmap": 0.0009373177656218306,
+        "heatmap": 0.0003227883423480509,
+        "rgb": 0.005802603289743679,
+        "mean": 0.00297669059350988
+      },
+      "validation_psnr_db": {
+        "depth": 29.200097243209527,
+        "occupancy": 30.601213775096614,
+        "costmap": 37.80298205177644,
+        "heatmap": 41.81389901744962,
+        "rgb": 25.123027098518296,
+        "mean": 32.908243837210094
+      },
+      "learning_rate": 3.80602337443566e-05,
+      "seconds": 29.266088108997792
+    },
+    {
+      "epoch": 107,
+      "train_mse": 0.0019060195076220528,
+      "train_steps_by_modality": {
+        "depth": 173,
+        "occupancy": 83,
+        "costmap": 83,
+        "heatmap": 98,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.002646066369682861,
+        "occupancy": 0.004276569408426035,
+        "costmap": 0.0007303381023828277,
+        "heatmap": 0.00044780746758179803,
+        "rgb": 0.005566873312798432,
+        "mean": 0.002733530932174391
+      },
+      "validation_psnr_db": {
+        "depth": 28.963540403458133,
+        "occupancy": 31.032473707380007,
+        "costmap": 38.051549136156,
+        "heatmap": 41.58828930237877,
+        "rgb": 26.123166196781387,
+        "mean": 33.151803749230865
+      },
+      "learning_rate": 3.3209786751399096e-05,
+      "seconds": 28.055675809038803
+    },
+    {
+      "epoch": 108,
+      "train_mse": 0.0021418652325398096,
+      "train_steps_by_modality": {
+        "depth": 154,
+        "occupancy": 86,
+        "costmap": 106,
+        "heatmap": 83,
+        "rgb": 171
+      },
+      "validation_mse": {
+        "depth": 0.0020184033298088857,
+        "occupancy": 0.004781780022514997,
+        "costmap": 0.0010646321102790858,
+        "heatmap": 0.00029788335612263635,
+        "rgb": 0.007758889411990013,
+        "mean": 0.003184317646143124
+      },
+      "validation_psnr_db": {
+        "depth": 29.744457095058937,
+        "occupancy": 31.388053086117502,
+        "costmap": 37.52889262699334,
+        "heatmap": 41.88279990763074,
+        "rgb": 24.343289284463197,
+        "mean": 32.97749840005274
+      },
+      "learning_rate": 2.8679254453910814e-05,
+      "seconds": 29.308923710137606
+    },
+    {
+      "epoch": 109,
+      "train_mse": 0.002337993930147301,
+      "train_steps_by_modality": {
+        "depth": 187,
+        "occupancy": 82,
+        "costmap": 86,
+        "heatmap": 75,
+        "rgb": 170
+      },
+      "validation_mse": {
+        "depth": 0.0020258525748633677,
+        "occupancy": 0.004287726851746104,
+        "costmap": 0.0008261651608134141,
+        "heatmap": 0.0007207095601794814,
+        "rgb": 0.006027686160652795,
+        "mean": 0.0027776280616510322
+      },
+      "validation_psnr_db": {
+        "depth": 29.760927387730092,
+        "occupancy": 31.346565607772018,
+        "costmap": 37.89356051786853,
+        "heatmap": 40.69598871105605,
+        "rgb": 25.787684250532212,
+        "mean": 33.096945294991784
+      },
+      "learning_rate": 2.447174185242321e-05,
+      "seconds": 27.69633308192715
+    },
+    {
+      "epoch": 110,
+      "train_mse": 0.002554352463904858,
+      "train_steps_by_modality": {
+        "depth": 152,
+        "occupancy": 88,
+        "costmap": 81,
+        "heatmap": 81,
+        "rgb": 198
+      },
+      "validation_mse": {
+        "depth": 0.0023440415194878974,
+        "occupancy": 0.003913651994177296,
+        "costmap": 0.0010285753537068053,
+        "heatmap": 0.0005484861368232588,
+        "rgb": 0.006165123977957087,
+        "mean": 0.002799975796430469
+      },
+      "validation_psnr_db": {
+        "depth": 28.943310958432058,
+        "occupancy": 31.431348485263428,
+        "costmap": 37.34699005261692,
+        "heatmap": 41.15802038406426,
+        "rgb": 25.358766581702,
+        "mean": 32.84768729241573
+      },
+      "learning_rate": 2.0590132565903507e-05,
+      "seconds": 31.109362359857187
+    },
+    {
+      "epoch": 111,
+      "train_mse": 0.0023114526884827078,
+      "train_steps_by_modality": {
+        "depth": 179,
+        "occupancy": 80,
+        "costmap": 89,
+        "heatmap": 96,
+        "rgb": 156
+      },
+      "validation_mse": {
+        "depth": 0.002808943444203275,
+        "occupancy": 0.004293073837996215,
+        "costmap": 0.0011271836551208657,
+        "heatmap": 0.0009228194996164044,
+        "rgb": 0.006730880662669531,
+        "mean": 0.003176580219921258
+      },
+      "validation_psnr_db": {
+        "depth": 29.2151979645908,
+        "occupancy": 30.947616501044592,
+        "costmap": 37.34107631614189,
+        "heatmap": 40.870492448141476,
+        "rgb": 24.96206600879033,
+        "mean": 32.66728984774181
+      },
+      "learning_rate": 1.7037086855465826e-05,
+      "seconds": 29.30541607295163
+    },
+    {
+      "epoch": 112,
+      "train_mse": 0.0022792409784741117,
+      "train_steps_by_modality": {
+        "depth": 180,
+        "occupancy": 90,
+        "costmap": 85,
+        "heatmap": 80,
+        "rgb": 165
+      },
+      "validation_mse": {
+        "depth": 0.0020815134873070442,
+        "occupancy": 0.004845862875097535,
+        "costmap": 0.0008966081506716566,
+        "heatmap": 0.0007688229138188439,
+        "rgb": 0.0073531191107273726,
+        "mean": 0.0031891853075244904
+      },
+      "validation_psnr_db": {
+        "depth": 29.80953269255388,
+        "occupancy": 30.967752238953395,
+        "costmap": 37.633141833196326,
+        "heatmap": 41.215232103154136,
+        "rgb": 25.594828792840136,
+        "mean": 33.044097532139574
+      },
+      "learning_rate": 1.3815039801161708e-05,
+      "seconds": 27.337032198905945
+    },
+    {
+      "epoch": 113,
+      "train_mse": 0.0022224167431909338,
+      "train_steps_by_modality": {
+        "depth": 191,
+        "occupancy": 89,
+        "costmap": 74,
+        "heatmap": 83,
+        "rgb": 163
+      },
+      "validation_mse": {
+        "depth": 0.0018538938068862383,
+        "occupancy": 0.00441462578035296,
+        "costmap": 0.001988823351995153,
+        "heatmap": 0.0008698872277616627,
+        "rgb": 0.005631565620812277,
+        "mean": 0.0029517591575616586
+      },
+      "validation_psnr_db": {
+        "depth": 29.649399127689662,
+        "occupancy": 31.000694617211643,
+        "costmap": 36.652622224880446,
+        "heatmap": 40.99822078822199,
+        "rgb": 26.151406362902534,
+        "mean": 32.89046862418125
+      },
+      "learning_rate": 1.0926199633097144e-05,
+      "seconds": 27.14560123695992
+    },
+    {
+      "epoch": 114,
+      "train_mse": 0.0024110910451023908,
+      "train_steps_by_modality": {
+        "depth": 162,
+        "occupancy": 87,
+        "costmap": 88,
+        "heatmap": 87,
+        "rgb": 176
+      },
+      "validation_mse": {
+        "depth": 0.002217633391006125,
+        "occupancy": 0.004315088138456404,
+        "costmap": 0.0012592106746120003,
+        "heatmap": 0.0004366293479102347,
+        "rgb": 0.006385410828645238,
+        "mean": 0.0029227944761260004
+      },
+      "validation_psnr_db": {
+        "depth": 29.049099404827157,
+        "occupancy": 31.366992261874625,
+        "costmap": 37.42111598599872,
+        "heatmap": 41.642874542607586,
+        "rgb": 25.464179554928286,
+        "mean": 32.988852350047274
+      },
+      "learning_rate": 8.372546218022737e-06,
+      "seconds": 29.423841924173757
+    },
+    {
+      "epoch": 115,
+      "train_mse": 0.0021805413105668472,
+      "train_steps_by_modality": {
+        "depth": 161,
+        "occupancy": 98,
+        "costmap": 77,
+        "heatmap": 87,
+        "rgb": 177
+      },
+      "validation_mse": {
+        "depth": 0.0023770469237610493,
+        "occupancy": 0.006074497961688192,
+        "costmap": 0.002028395670600326,
+        "heatmap": 0.00033964425448276516,
+        "rgb": 0.007117992195869899,
+        "mean": 0.003587515401280446
+      },
+      "validation_psnr_db": {
+        "depth": 29.71614670205813,
+        "occupancy": 30.515114514084846,
+        "costmap": 36.81113828757419,
+        "heatmap": 41.62548262294483,
+        "rgb": 25.281503614922308,
+        "mean": 32.78987714831686
+      },
+      "learning_rate": 6.1558297024311634e-06,
+      "seconds": 29.89019081206061
+    },
+    {
+      "epoch": 116,
+      "train_mse": 0.0021651800375101023,
+      "train_steps_by_modality": {
+        "depth": 166,
+        "occupancy": 100,
+        "costmap": 84,
+        "heatmap": 70,
+        "rgb": 180
+      },
+      "validation_mse": {
+        "depth": 0.002459170025152465,
+        "occupancy": 0.003680646857295263,
+        "costmap": 0.0007663123701099216,
+        "heatmap": 0.0008599499980037864,
+        "rgb": 0.005799783322597957,
+        "mean": 0.0027131725146318786
+      },
+      "validation_psnr_db": {
+        "depth": 28.53536782661435,
+        "occupancy": 31.413709047256823,
+        "costmap": 37.95697823390802,
+        "heatmap": 40.766012287340985,
+        "rgb": 25.512668091848784,
+        "mean": 32.83694709739379
+      },
+      "learning_rate": 4.2775693130948045e-06,
+      "seconds": 28.741367891896516
+    },
+    {
+      "epoch": 117,
+      "train_mse": 0.002170270460514985,
+      "train_steps_by_modality": {
+        "depth": 162,
+        "occupancy": 83,
+        "costmap": 93,
+        "heatmap": 93,
+        "rgb": 169
+      },
+      "validation_mse": {
+        "depth": 0.002543713161786501,
+        "occupancy": 0.005487396320758207,
+        "costmap": 0.001304871792247771,
+        "heatmap": 0.0005408814973230215,
+        "rgb": 0.006550178167849986,
+        "mean": 0.003285408187993097
+      },
+      "validation_psnr_db": {
+        "depth": 29.246234112010697,
+        "occupancy": 30.681366796018292,
+        "costmap": 37.31585151438163,
+        "heatmap": 41.540557821112564,
+        "rgb": 25.03071983330752,
+        "mean": 32.76294601536615
+      },
+      "learning_rate": 2.739052315863297e-06,
+      "seconds": 29.91792347515002
+    },
+    {
+      "epoch": 118,
+      "train_mse": 0.0023783799667148743,
+      "train_steps_by_modality": {
+        "depth": 157,
+        "occupancy": 84,
+        "costmap": 92,
+        "heatmap": 74,
+        "rgb": 193
+      },
+      "validation_mse": {
+        "depth": 0.002678790385188121,
+        "occupancy": 0.003385514505175201,
+        "costmap": 0.0010937480330742095,
+        "heatmap": 0.0008585526783867357,
+        "rgb": 0.0069183555573949385,
+        "mean": 0.002986992231843841
+      },
+      "validation_psnr_db": {
+        "depth": 29.002442860691172,
+        "occupancy": 31.31708569450856,
+        "costmap": 37.37445139398204,
+        "heatmap": 41.32465698995776,
+        "rgb": 25.49877145509292,
+        "mean": 32.90348167884649
+      },
+      "learning_rate": 1.5413331334360165e-06,
+      "seconds": 29.893039144109935
+    },
+    {
+      "epoch": 119,
+      "train_mse": 0.0022769457953586425,
+      "train_steps_by_modality": {
+        "depth": 153,
+        "occupancy": 87,
+        "costmap": 79,
+        "heatmap": 92,
+        "rgb": 189
+      },
+      "validation_mse": {
+        "depth": 0.002805467891448643,
+        "occupancy": 0.006244481201267465,
+        "costmap": 0.0022969058655790933,
+        "heatmap": 0.0004105261911414952,
+        "rgb": 0.006727169303404581,
+        "mean": 0.0036969100905682546
+      },
+      "validation_psnr_db": {
+        "depth": 29.49495336973378,
+        "occupancy": 30.900442745989025,
+        "costmap": 37.09862633607406,
+        "heatmap": 41.629254189793045,
+        "rgb": 25.00096290458103,
+        "mean": 32.82484790923419
+      },
+      "learning_rate": 6.852326227130827e-07,
+      "seconds": 30.464651064947248
+    },
+    {
+      "epoch": 120,
+      "train_mse": 0.0023451969272074774,
+      "train_steps_by_modality": {
+        "depth": 165,
+        "occupancy": 80,
+        "costmap": 87,
+        "heatmap": 85,
+        "rgb": 183
+      },
+      "validation_mse": {
+        "depth": 0.0023219611272603893,
+        "occupancy": 0.0045565436650779,
+        "costmap": 0.0010049441188028948,
+        "heatmap": 0.00035795914355831983,
+        "rgb": 0.0077739045631864834,
+        "mean": 0.0032030625235771977
+      },
+      "validation_psnr_db": {
+        "depth": 29.404705866654542,
+        "occupancy": 30.62368457230897,
+        "costmap": 37.714684827936665,
+        "heatmap": 41.82605241848394,
+        "rgb": 25.222889327303818,
+        "mean": 32.958403402537584
+      },
+      "learning_rate": 1.713375122213699e-07,
+      "seconds": 30.30716446507722
+    }
+  ],
+  "best_epoch": 107,
+  "best_psnr_db": 33.151803749230865,
+  "completed": true
+}

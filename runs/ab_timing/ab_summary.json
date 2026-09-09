@@ -1,0 +1,44 @@
+{
+  "note": "Same-node A/B on holygpu8a22105 (A100-80GB, 28 CPUs, 600 steps/epoch). Epoch 1 includes warmup; epoch 2 is steady state.",
+  "runs": {
+    "original_png_cpuresize_threads": {
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "steps_per_epoch": 600,
+      "workers": 28,
+      "epoch_seconds": [
+        43.7,
+        27.8
+      ],
+      "steady_state_seconds": 27.8,
+      "ms_per_step": 46.28,
+      "validation_psnr_db": {
+        "depth": 16.762427796818272,
+        "occupancy": 17.874407281153516,
+        "costmap": 18.422121754470915,
+        "heatmap": 19.25946317090586,
+        "rgb": 12.536612685610073,
+        "mean": 16.971006537791727
+      }
+    },
+    "fast_npy_gpuresize_processes": {
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "steps_per_epoch": 600,
+      "workers": 28,
+      "epoch_seconds": [
+        9.2,
+        6.7
+      ],
+      "steady_state_seconds": 6.7,
+      "ms_per_step": 11.13,
+      "validation_psnr_db": {
+        "depth": 17.079788350112313,
+        "occupancy": 18.955660491336282,
+        "costmap": 19.233786115587925,
+        "heatmap": 20.502830508313977,
+        "rgb": 14.660815276165415,
+        "mean": 18.08657614830318
+      }
+    }
+  },
+  "speedup_steady_state": 4.15
+}
