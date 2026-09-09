@@ -1,0 +1,1459 @@
+{
+  "runs": [
+    {
+      "decoder": "v2",
+      "decoder_trained": true,
+      "seed": 42,
+      "gpu": "Orin",
+      "torch": "2.5.0a0+872d972e41.nv24.08",
+      "cuda": "12.6",
+      "cudnn": 90300,
+      "cpu_threads": 8,
+      "compile": true,
+      "dynamic": false,
+      "fp16": true,
+      "strip_rows": 0,
+      "depth": 3,
+      "warmups": 10,
+      "repeats": 20,
+      "sources": {
+        "modeling/unified_model_v4/multimodal_ae.py": "311c10f009b35716592df677b87f84b4f0d6c4de1f53422535cf35365304ca55",
+        "modeling/unified_model_v2/multimodal_ae.py": "5992b6f4fd4184cfa35c3f38240bc0b3c5c611fc2f7a422e1eb61c2fa51409d6",
+        "encoder_best_MMV2.pth": "30b99778c197eb0206caa25138e434e89eb492604135fc4b6d16fb578c96d361",
+        "decoder_best_MMV2.pth": "3ce3882facfe9fe694d14a1016c7d1dc545d38ad0aafa43469650f2a92fc9150"
+      },
+      "cases": [
+        {
+          "shape": [
+            2560,
+            1920
+          ],
+          "native_bytes": 4915200,
+          "input_sha256": "19b5c35ad9f2dcdf83444746bfafb9365bb4452cf8bc3732bf36484dead7ac71",
+          "samples": [
+            {
+              "encode_ms": 7.7501019986812025,
+              "decode_ms": 29.111474003002513,
+              "total_ms": 36.861576001683716,
+              "decoder_gpu_resident_ms": 24.06378000159748
+            },
+            {
+              "encode_ms": 7.774197998514865,
+              "decode_ms": 29.038418004347477,
+              "total_ms": 36.81261600286234,
+              "decoder_gpu_resident_ms": 23.757667004247196
+            },
+            {
+              "encode_ms": 7.780405998346396,
+              "decode_ms": 34.108799998648465,
+              "total_ms": 41.88920599699486,
+              "decoder_gpu_resident_ms": 23.738691001199186
+            },
+            {
+              "encode_ms": 7.888278996688314,
+              "decode_ms": 33.83475100417854,
+              "total_ms": 41.723030000866856,
+              "decoder_gpu_resident_ms": 23.53401800064603
+            },
+            {
+              "encode_ms": 8.421304002695251,
+              "decode_ms": 32.6292760000797,
+              "total_ms": 41.05058000277495,
+              "decoder_gpu_resident_ms": 23.550691003038082
+            },
+            {
+              "encode_ms": 7.856021999032237,
+              "decode_ms": 33.956992003368214,
+              "total_ms": 41.81301400240045,
+              "decoder_gpu_resident_ms": 23.40041699790163
+            },
+            {
+              "encode_ms": 7.441525005560834,
+              "decode_ms": 29.854451997380238,
+              "total_ms": 37.29597700294107,
+              "decoder_gpu_resident_ms": 23.31776100618299
+            },
+            {
+              "encode_ms": 7.696757995290682,
+              "decode_ms": 30.417813002713956,
+              "total_ms": 38.11457099800464,
+              "decoder_gpu_resident_ms": 23.39049799775239
+            },
+            {
+              "encode_ms": 7.736309002211783,
+              "decode_ms": 31.91996199893765,
+              "total_ms": 39.656271001149435,
+              "decoder_gpu_resident_ms": 23.22832099889638
+            },
+            {
+              "encode_ms": 7.836886004952248,
+              "decode_ms": 30.32338099728804,
+              "total_ms": 38.16026700224029,
+              "decoder_gpu_resident_ms": 23.18921700498322
+            },
+            {
+              "encode_ms": 7.610678003402427,
+              "decode_ms": 29.5093309978256,
+              "total_ms": 37.12000900122803,
+              "decoder_gpu_resident_ms": 23.13699299702421
+            },
+            {
+              "encode_ms": 6.908019000547938,
+              "decode_ms": 29.877045002649538,
+              "total_ms": 36.785064003197476,
+              "decoder_gpu_resident_ms": 23.42412999860244
+            },
+            {
+              "encode_ms": 6.58724999811966,
+              "decode_ms": 27.807598999061156,
+              "total_ms": 34.394848997180816,
+              "decoder_gpu_resident_ms": 23.20288099872414
+            },
+            {
+              "encode_ms": 6.929426999704447,
+              "decode_ms": 27.699437996488996,
+              "total_ms": 34.62886499619344,
+              "decoder_gpu_resident_ms": 23.494848996051587
+            },
+            {
+              "encode_ms": 6.368208996718749,
+              "decode_ms": 29.57886800140841,
+              "total_ms": 35.94707699812716,
+              "decoder_gpu_resident_ms": 23.487042002670933
+            },
+            {
+              "encode_ms": 6.509106002340559,
+              "decode_ms": 27.5509580023936,
+              "total_ms": 34.06006400473416,
+              "decoder_gpu_resident_ms": 23.232640996866394
+            },
+            {
+              "encode_ms": 6.85422799870139,
+              "decode_ms": 27.785422003944404,
+              "total_ms": 34.639650002645794,
+              "decoder_gpu_resident_ms": 23.28630599367898
+            },
+            {
+              "encode_ms": 6.269842000619974,
+              "decode_ms": 28.707279998343438,
+              "total_ms": 34.97712199896341,
+              "decoder_gpu_resident_ms": 23.48029000131646
+            },
+            {
+              "encode_ms": 6.411921996914316,
+              "decode_ms": 26.94170800532447,
+              "total_ms": 33.35363000223879,
+              "decoder_gpu_resident_ms": 23.268418000952806
+            },
+            {
+              "encode_ms": 6.324977999611292,
+              "decode_ms": 27.212588000111282,
+              "total_ms": 33.537565999722574,
+              "decoder_gpu_resident_ms": 23.35772899823496
+            }
+          ],
+          "peak_allocated_bytes": 629819392,
+          "latent_bytes": 153600,
+          "p50_ms": {
+            "encode_ms": 7.52610150448163,
+            "decode_ms": 29.544099499617005,
+            "total_ms": 36.83709600227303,
+            "decoder_gpu_resident_ms": 23.39545749782701
+          },
+          "p95_ms": {
+            "encode_ms": 7.914930246988661,
+            "decode_ms": 33.964582403132226,
+            "total_ms": 41.81682360213017,
+            "decoder_gpu_resident_ms": 23.77297265411471
+          }
+        },
+        {
+          "shape": [
+            5120,
+            3840
+          ],
+          "native_bytes": 19660800,
+          "input_sha256": "d40b819de6d0aa626c0477fc1d5e7323c02d3ad337cfa9f8f6ca7b8f2d2ef917",
+          "samples": [
+            {
+              "encode_ms": 41.31176200462505,
+              "decode_ms": 99.08628999983193,
+              "total_ms": 140.39805200445699,
+              "decoder_gpu_resident_ms": 90.9200879978016
+            },
+            {
+              "encode_ms": 41.4447220027796,
+              "decode_ms": 99.14196899626404,
+              "total_ms": 140.58669099904364,
+              "decoder_gpu_resident_ms": 91.04495299834525
+            },
+            {
+              "encode_ms": 41.37608200107934,
+              "decode_ms": 99.34740899916505,
+              "total_ms": 140.7234910002444,
+              "decoder_gpu_resident_ms": 91.07144900190178
+            },
+            {
+              "encode_ms": 41.32737700274447,
+              "decode_ms": 99.04875299980631,
+              "total_ms": 140.37613000255078,
+              "decoder_gpu_resident_ms": 91.0690809978405
+            },
+            {
+              "encode_ms": 41.19953799818177,
+              "decode_ms": 99.16142500151182,
+              "total_ms": 140.36096299969358,
+              "decoder_gpu_resident_ms": 91.0548399988329
+            },
+            {
+              "encode_ms": 41.405425996345,
+              "decode_ms": 100.13189200253692,
+              "total_ms": 141.53731799888192,
+              "decoder_gpu_resident_ms": 91.00671199848875
+            },
+            {
+              "encode_ms": 41.50792200380238,
+              "decode_ms": 99.07464099524077,
+              "total_ms": 140.58256299904315,
+              "decoder_gpu_resident_ms": 91.08575300342636
+            },
+            {
+              "encode_ms": 41.42024199973093,
+              "decode_ms": 99.35301000223262,
+              "total_ms": 140.77325200196356,
+              "decoder_gpu_resident_ms": 91.01775200542761
+            },
+            {
+              "encode_ms": 41.60731400043005,
+              "decode_ms": 99.16228799556848,
+              "total_ms": 140.76960199599853,
+              "decoder_gpu_resident_ms": 91.10597599647008
+            },
+            {
+              "encode_ms": 41.31748999498086,
+              "decode_ms": 99.1621280045365,
+              "total_ms": 140.47961799951736,
+              "decoder_gpu_resident_ms": 91.04738400492352
+            },
+            {
+              "encode_ms": 41.40638600074453,
+              "decode_ms": 99.10312000283739,
+              "total_ms": 140.50950600358192,
+              "decoder_gpu_resident_ms": 91.05675999308005
+            },
+            {
+              "encode_ms": 41.283792998001445,
+              "decode_ms": 99.36776100221323,
+              "total_ms": 140.65155400021467,
+              "decoder_gpu_resident_ms": 91.0293049964821
+            },
+            {
+              "encode_ms": 41.3863220019266,
+              "decode_ms": 99.58241699496284,
+              "total_ms": 140.96873899688944,
+              "decoder_gpu_resident_ms": 91.06719199917279
+            },
+            {
+              "encode_ms": 41.580978002457414,
+              "decode_ms": 99.65067399753025,
+              "total_ms": 141.23165199998766,
+              "decoder_gpu_resident_ms": 91.01752699643839
+            },
+            {
+              "encode_ms": 41.420754001592286,
+              "decode_ms": 99.37012800219236,
+              "total_ms": 140.79088200378465,
+              "decoder_gpu_resident_ms": 90.96203900116961
+            },
+            {
+              "encode_ms": 41.45054599939613,
+              "decode_ms": 99.90724899398629,
+              "total_ms": 141.3577949933824,
+              "decoder_gpu_resident_ms": 90.98984800220933
+            },
+            {
+              "encode_ms": 41.51905800245004,
+              "decode_ms": 99.84881700074766,
+              "total_ms": 141.3678750031977,
+              "decoder_gpu_resident_ms": 91.0515440045856
+            },
+            {
+              "encode_ms": 41.6325939950184,
+              "decode_ms": 99.75022500293562,
+              "total_ms": 141.38281899795402,
+              "decoder_gpu_resident_ms": 91.03128699644003
+            },
+            {
+              "encode_ms": 41.53243399923667,
+              "decode_ms": 99.46724800101947,
+              "total_ms": 140.99968200025614,
+              "decoder_gpu_resident_ms": 91.07973499340005
+            },
+            {
+              "encode_ms": 41.368561003764626,
+              "decode_ms": 99.55112099851249,
+              "total_ms": 140.9196820022771,
+              "decoder_gpu_resident_ms": 91.02133499982301
+            }
+          ],
+          "peak_allocated_bytes": 2517716992,
+          "latent_bytes": 614400,
+          "p50_ms": {
+            "encode_ms": 41.41331400023773,
+            "decode_ms": 99.36038550222293,
+            "total_ms": 140.77142699898104,
+            "decoder_gpu_resident_ms": 91.04616850163438
+          },
+          "p95_ms": {
+            "encode_ms": 41.60857800015947,
+            "decode_ms": 99.91848114441382,
+            "total_ms": 141.3905439480004,
+            "decoder_gpu_resident_ms": 91.08676415307855
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "decoder": "v4",
+      "decoder_trained": false,
+      "seed": 42,
+      "gpu": "Orin",
+      "torch": "2.5.0a0+872d972e41.nv24.08",
+      "cuda": "12.6",
+      "cudnn": 90300,
+      "cpu_threads": 8,
+      "compile": true,
+      "dynamic": false,
+      "fp16": true,
+      "strip_rows": 0,
+      "depth": 3,
+      "warmups": 10,
+      "repeats": 20,
+      "sources": {
+        "modeling/unified_model_v4/multimodal_ae.py": "311c10f009b35716592df677b87f84b4f0d6c4de1f53422535cf35365304ca55",
+        "modeling/unified_model_v2/multimodal_ae.py": "5992b6f4fd4184cfa35c3f38240bc0b3c5c611fc2f7a422e1eb61c2fa51409d6",
+        "encoder_best_MMV2.pth": "30b99778c197eb0206caa25138e434e89eb492604135fc4b6d16fb578c96d361"
+      },
+      "cases": [
+        {
+          "shape": [
+            2560,
+            1920
+          ],
+          "native_bytes": 4915200,
+          "input_sha256": "19b5c35ad9f2dcdf83444746bfafb9365bb4452cf8bc3732bf36484dead7ac71",
+          "samples": [
+            {
+              "encode_ms": 8.695830001670402,
+              "decode_ms": 5.169452997506596,
+              "total_ms": 13.865282999176998,
+              "decoder_gpu_resident_ms": 2.100614001392387
+            },
+            {
+              "encode_ms": 8.731925998290535,
+              "decode_ms": 5.882894998649135,
+              "total_ms": 14.61482099693967,
+              "decoder_gpu_resident_ms": 1.6401640023104846
+            },
+            {
+              "encode_ms": 8.898038999177516,
+              "decode_ms": 5.124428003909998,
+              "total_ms": 14.022467003087513,
+              "decoder_gpu_resident_ms": 1.5575080033158883
+            },
+            {
+              "encode_ms": 8.954229997470975,
+              "decode_ms": 5.792142997961491,
+              "total_ms": 14.746372995432466,
+              "decoder_gpu_resident_ms": 1.8007079997914843
+            },
+            {
+              "encode_ms": 8.518196998920757,
+              "decode_ms": 5.358381997211836,
+              "total_ms": 13.876578996132594,
+              "decoder_gpu_resident_ms": 1.6392999968957156
+            },
+            {
+              "encode_ms": 8.555893000448123,
+              "decode_ms": 5.314030000590719,
+              "total_ms": 13.869923001038842,
+              "decoder_gpu_resident_ms": 1.6115879989229143
+            },
+            {
+              "encode_ms": 8.543766001821496,
+              "decode_ms": 5.347564998373855,
+              "total_ms": 13.89133100019535,
+              "decoder_gpu_resident_ms": 1.7020840023178607
+            },
+            {
+              "encode_ms": 8.32651700329734,
+              "decode_ms": 5.345773999579251,
+              "total_ms": 13.672291002876591,
+              "decoder_gpu_resident_ms": 1.6383410038542934
+            },
+            {
+              "encode_ms": 8.653557000798173,
+              "decode_ms": 6.717168995237444,
+              "total_ms": 15.370725996035617,
+              "decoder_gpu_resident_ms": 1.6839400050230324
+            },
+            {
+              "encode_ms": 9.038229996804148,
+              "decode_ms": 7.677524001337588,
+              "total_ms": 16.715753998141736,
+              "decoder_gpu_resident_ms": 1.6219239987549372
+            },
+            {
+              "encode_ms": 8.576469001127407,
+              "decode_ms": 5.432942001789343,
+              "total_ms": 14.00941100291675,
+              "decoder_gpu_resident_ms": 1.6009640021366067
+            },
+            {
+              "encode_ms": 8.394421005505137,
+              "decode_ms": 6.320655993476976,
+              "total_ms": 14.715076998982113,
+              "decoder_gpu_resident_ms": 1.605379999091383
+            },
+            {
+              "encode_ms": 8.626933995401487,
+              "decode_ms": 5.77380700269714,
+              "total_ms": 14.400740998098627,
+              "decoder_gpu_resident_ms": 1.5428190017701127
+            },
+            {
+              "encode_ms": 8.204339996154886,
+              "decode_ms": 8.103924999886658,
+              "total_ms": 16.308264996041544,
+              "decoder_gpu_resident_ms": 1.7297640006290749
+            },
+            {
+              "encode_ms": 8.705653999641072,
+              "decode_ms": 6.073647004086524,
+              "total_ms": 14.779301003727596,
+              "decoder_gpu_resident_ms": 1.7106279992731288
+            },
+            {
+              "encode_ms": 8.453524998913053,
+              "decode_ms": 5.671182996593416,
+              "total_ms": 14.12470799550647,
+              "decoder_gpu_resident_ms": 1.219236000906676
+            },
+            {
+              "encode_ms": 8.632278004370164,
+              "decode_ms": 7.789395000145305,
+              "total_ms": 16.42167300451547,
+              "decoder_gpu_resident_ms": 1.2299230002099648
+            },
+            {
+              "encode_ms": 8.623670000815764,
+              "decode_ms": 6.668785004876554,
+              "total_ms": 15.292455005692318,
+              "decoder_gpu_resident_ms": 1.69152399757877
+            },
+            {
+              "encode_ms": 8.625205999123864,
+              "decode_ms": 7.631986998603679,
+              "total_ms": 16.257192997727543,
+              "decoder_gpu_resident_ms": 1.6981799999484792
+            },
+            {
+              "encode_ms": 8.603574002336245,
+              "decode_ms": 6.549807992996648,
+              "total_ms": 15.153381995332893,
+              "decoder_gpu_resident_ms": 1.5812519995961338
+            }
+          ],
+          "peak_allocated_bytes": 90407424,
+          "latent_bytes": 153600,
+          "p50_ms": {
+            "encode_ms": 8.624437999969814,
+            "decode_ms": 5.837518998305313,
+            "total_ms": 14.664948997960892,
+            "decoder_gpu_resident_ms": 1.6388205003750045
+          },
+          "p95_ms": {
+            "encode_ms": 8.958429997437634,
+            "decode_ms": 7.805121500132373,
+            "total_ms": 16.436377054196782,
+            "decoder_gpu_resident_ms": 1.8157032998715297
+          }
+        },
+        {
+          "shape": [
+            5120,
+            3840
+          ],
+          "native_bytes": 19660800,
+          "input_sha256": "d40b819de6d0aa626c0477fc1d5e7323c02d3ad337cfa9f8f6ca7b8f2d2ef917",
+          "samples": [
+            {
+              "encode_ms": 47.11186100030318,
+              "decode_ms": 15.09158900444163,
+              "total_ms": 62.20345000474481,
+              "decoder_gpu_resident_ms": 3.5438489940133877
+            },
+            {
+              "encode_ms": 48.31004000152461,
+              "decode_ms": 16.089639997517224,
+              "total_ms": 64.39967999904184,
+              "decoder_gpu_resident_ms": 3.2150480037671514
+            },
+            {
+              "encode_ms": 48.18216800049413,
+              "decode_ms": 15.382981997390743,
+              "total_ms": 63.56514999788487,
+              "decoder_gpu_resident_ms": 3.0809040035819635
+            },
+            {
+              "encode_ms": 47.88040700077545,
+              "decode_ms": 17.306282999925315,
+              "total_ms": 65.18669000070076,
+              "decoder_gpu_resident_ms": 3.2379280019085854
+            },
+            {
+              "encode_ms": 44.01735700230347,
+              "decode_ms": 12.079293999704532,
+              "total_ms": 56.096651002008,
+              "decoder_gpu_resident_ms": 3.048935999686364
+            },
+            {
+              "encode_ms": 41.5861190049327,
+              "decode_ms": 12.228990999574307,
+              "total_ms": 53.815110004507005,
+              "decoder_gpu_resident_ms": 3.2657679985277355
+            },
+            {
+              "encode_ms": 42.00362400297308,
+              "decode_ms": 12.634878999961074,
+              "total_ms": 54.63850300293416,
+              "decoder_gpu_resident_ms": 3.1555280002066866
+            },
+            {
+              "encode_ms": 42.44887299864786,
+              "decode_ms": 12.777280004229397,
+              "total_ms": 55.226153002877254,
+              "decoder_gpu_resident_ms": 3.1945039954734966
+            },
+            {
+              "encode_ms": 42.792905995156616,
+              "decode_ms": 13.501985005859751,
+              "total_ms": 56.29489100101637,
+              "decoder_gpu_resident_ms": 3.555432995199226
+            },
+            {
+              "encode_ms": 41.67165500257397,
+              "decode_ms": 12.942784000188112,
+              "total_ms": 54.61443900276208,
+              "decoder_gpu_resident_ms": 3.5631770006148145
+            },
+            {
+              "encode_ms": 42.65399400173919,
+              "decode_ms": 11.573275995033327,
+              "total_ms": 54.22726999677252,
+              "decoder_gpu_resident_ms": 3.5568090024753474
+            },
+            {
+              "encode_ms": 42.16810400248505,
+              "decode_ms": 12.81318399560405,
+              "total_ms": 54.9812879980891,
+              "decoder_gpu_resident_ms": 3.5666010007844307
+            },
+            {
+              "encode_ms": 42.925385998387355,
+              "decode_ms": 12.774016002367716,
+              "total_ms": 55.69940200075507,
+              "decoder_gpu_resident_ms": 3.57098499807762
+            },
+            {
+              "encode_ms": 42.32999299711082,
+              "decode_ms": 12.69615899946075,
+              "total_ms": 55.02615199657157,
+              "decoder_gpu_resident_ms": 3.587977000279352
+            },
+            {
+              "encode_ms": 42.813738000404555,
+              "decode_ms": 12.87689599848818,
+              "total_ms": 55.690633998892736,
+              "decoder_gpu_resident_ms": 3.5779290046775714
+            },
+            {
+              "encode_ms": 41.87498399551259,
+              "decode_ms": 11.913597001694143,
+              "total_ms": 53.788580997206736,
+              "decoder_gpu_resident_ms": 3.2532559998799115
+            },
+            {
+              "encode_ms": 41.31552600301802,
+              "decode_ms": 12.14492599683581,
+              "total_ms": 53.46045199985383,
+              "decoder_gpu_resident_ms": 3.0514000027324073
+            },
+            {
+              "encode_ms": 42.07418399892049,
+              "decode_ms": 11.875709002197254,
+              "total_ms": 53.94989300111774,
+              "decoder_gpu_resident_ms": 3.257352000218816
+            },
+            {
+              "encode_ms": 41.33562200149754,
+              "decode_ms": 11.577436998777557,
+              "total_ms": 52.9130590002751,
+              "decoder_gpu_resident_ms": 3.546377003658563
+            },
+            {
+              "encode_ms": 42.324488997110166,
+              "decode_ms": 11.96831699780887,
+              "total_ms": 54.292805994919036,
+              "decoder_gpu_resident_ms": 3.561448997061234
+            }
+          ],
+          "peak_allocated_bytes": 355303936,
+          "latent_bytes": 614400,
+          "p50_ms": {
+            "encode_ms": 42.38943299787934,
+            "decode_ms": 12.735087500914233,
+            "total_ms": 55.003719997330336,
+            "decoder_gpu_resident_ms": 3.4048084962705616
+          },
+          "p95_ms": {
+            "encode_ms": 48.188561600545654,
+            "decode_ms": 16.15047214763763,
+            "total_ms": 64.43903049912478,
+            "decoder_gpu_resident_ms": 3.5784314044576604
+          }
+        }
+      ],
+      "completed": true
+    }
+  ],
+  "production_overhead_runs": [
+    {
+      "measured_at_utc": "2026-09-09T17:51:56.867940+00:00",
+      "script": "LatentROS_racecar/scripts/diagnostics/measure_overhead.py",
+      "depth": 3,
+      "fp16": true,
+      "compile": true,
+      "dynamic_hw": true,
+      "strip_rows": 512,
+      "warmups_per_stage": 5,
+      "calls_per_stage": 30,
+      "input_seed": 42,
+      "notes": "Original stage timing loops unchanged. Results are means and sums of means, not a measured complete ROS callback. V4 decoder uses random weights. 20MB pairs repeated in reverse order after variable from_grid times; both retained.",
+      "agx_power": "MAXN mode 0, jetson_clocks applied by user; CPU/GPU minimum and maximum frequencies verified equal before and after runs",
+      "hosts": {
+        "ws": {
+          "torch": "2.5.1+cu121",
+          "numpy": "1.21.5",
+          "cuda": "12.1",
+          "cpu_threads": 16,
+          "sources": {
+            "_fast_codec.py": "b41bca2e922f60a003d3fc7ad316881457da1295276fdf1d8810d1d7006c03cb",
+            "codec.py": "14f82ac611ea52489aaa2b56301403c6c26a60f27bacd29bc45aaac70d15407f",
+            "adapters.py": "83c6b4764cf17f00c6fca351c829d5745413874c2a6d8f89603098eb2342d4b8",
+            "multimodal_ae.py": "5e4607c74d0b1af7ccbc4db8e8f64f5ee30ad12fed50766142aa199317410cad",
+            "_codec_warmup.py": "b0d453de263bfdc0f45280a0db162f5d748e0b3fc92e00f09b48a841e8109448",
+            "weights/encoder_best_MMV2.pth": "30b99778c197eb0206caa25138e434e89eb492604135fc4b6d16fb578c96d361",
+            "weights/decoder_best_MMV2.pth": "3ce3882facfe9fe694d14a1016c7d1dc545d38ad0aafa43469650f2a92fc9150",
+            "v4_model": "9e81cc8e7d24e3da6901dc156053b767c44656f3ba48354971f138b5d274cea3",
+            "measure_overhead.py": "3ae64bab0d262df8c39756605ffdfa95cd918d78b62b88165a425191f49baf3a"
+          },
+          "input_hashes": {
+            "2560x1920": "9e48f56196080eb5b075fcfd31ff6e9ba63fafa7bf6387b0617a53045cccd6f0",
+            "5120x3840": "d6cf71f646e16e6ef7b11432a7448fcf660e1372905688f608031619f0fb1e97"
+          },
+          "clocks_after": {
+            "/sys/devices/system/cpu/cpufreq/policy11/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy8/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy18/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy16/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy2/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy14/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy22/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy12/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy9/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy20/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy10/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy19/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy5/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy17/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy3/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy15/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy1/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy23/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy13/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy21/scaling_min_freq": "800000",
+            "/sys/devices/system/cpu/cpufreq/policy11/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy8/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy18/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy16/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy2/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy14/scaling_max_freq": "5200000",
+            "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy22/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy12/scaling_max_freq": "5200000",
+            "/sys/devices/system/cpu/cpufreq/policy9/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy20/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy10/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy19/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy5/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy17/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy3/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy15/scaling_max_freq": "5200000",
+            "/sys/devices/system/cpu/cpufreq/policy1/scaling_max_freq": "5100000",
+            "/sys/devices/system/cpu/cpufreq/policy23/scaling_max_freq": "3900000",
+            "/sys/devices/system/cpu/cpufreq/policy13/scaling_max_freq": "5200000",
+            "/sys/devices/system/cpu/cpufreq/policy21/scaling_max_freq": "3900000"
+          }
+        },
+        "agx": {
+          "torch": "2.5.0a0+872d972e41.nv24.08",
+          "numpy": "1.26.4",
+          "cuda": "12.6",
+          "cpu_threads": 8,
+          "sources": {
+            "_fast_codec.py": "b41bca2e922f60a003d3fc7ad316881457da1295276fdf1d8810d1d7006c03cb",
+            "codec.py": "14f82ac611ea52489aaa2b56301403c6c26a60f27bacd29bc45aaac70d15407f",
+            "adapters.py": "83c6b4764cf17f00c6fca351c829d5745413874c2a6d8f89603098eb2342d4b8",
+            "multimodal_ae.py": "5e4607c74d0b1af7ccbc4db8e8f64f5ee30ad12fed50766142aa199317410cad",
+            "_codec_warmup.py": "b0d453de263bfdc0f45280a0db162f5d748e0b3fc92e00f09b48a841e8109448",
+            "weights/encoder_best_MMV2.pth": "30b99778c197eb0206caa25138e434e89eb492604135fc4b6d16fb578c96d361",
+            "weights/decoder_best_MMV2.pth": "3ce3882facfe9fe694d14a1016c7d1dc545d38ad0aafa43469650f2a92fc9150",
+            "v4_model": "9e81cc8e7d24e3da6901dc156053b767c44656f3ba48354971f138b5d274cea3",
+            "measure_overhead.py": "3ae64bab0d262df8c39756605ffdfa95cd918d78b62b88165a425191f49baf3a"
+          },
+          "input_hashes": {
+            "2560x1920": "9e48f56196080eb5b075fcfd31ff6e9ba63fafa7bf6387b0617a53045cccd6f0",
+            "5120x3840": "d6cf71f646e16e6ef7b11432a7448fcf660e1372905688f608031619f0fb1e97"
+          },
+          "clocks_after": {
+            "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "2188800",
+            "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "2188800",
+            "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "2188800",
+            "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "2188800",
+            "/sys/devices/platform/17000000.gpu/devfreq/17000000.gpu/min_freq": "930750000",
+            "/sys/devices/platform/17000000.gpu/devfreq/17000000.gpu/max_freq": "930750000"
+          }
+        }
+      },
+      "cases": [
+        {
+          "host": "ws",
+          "decoder": "v2",
+          "shape": [
+            2560,
+            1920
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 0.44,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 3.4,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 10.7,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 0.89,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 3.4,
+            "decode_ms": 10.7,
+            "model_ms": 14.1,
+            "overhead_ms": 1.34,
+            "total_ms": 15.44
+          },
+          "output": "decoder=v2 trained; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/ubuntu/workspace/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=NVIDIA GeForce RTX 3080 Ti  shape=2560x1920 (4.92 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     0.44     overhead\n_encode_grid (MODEL encode + pack)                 3.40     MODEL\narray.array('B', latent bytes)                     0.00     overhead\nadapters.dumps(meta)  (json)                       0.00     overhead\nStreamStat build (per-msg stats msg)               0.00     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    10.70     MODEL\nfrom_grid (np grid -> OccupancyGrid)               0.89     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  14.10 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   1.34 ms\nTOTAL LatentROS CPU+GPU per message:           15.44 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "ws",
+          "decoder": "v4",
+          "shape": [
+            2560,
+            1920
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 0.41,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 3.36,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 3.62,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 0.87,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 3.36,
+            "decode_ms": 3.62,
+            "model_ms": 6.98,
+            "overhead_ms": 1.3,
+            "total_ms": 8.28
+          },
+          "output": "decoder=v4 RANDOM WEIGHTS; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/ubuntu/workspace/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=NVIDIA GeForce RTX 3080 Ti  shape=2560x1920 (4.92 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     0.41     overhead\n_encode_grid (MODEL encode + pack)                 3.36     MODEL\narray.array('B', latent bytes)                     0.00     overhead\nadapters.dumps(meta)  (json)                       0.00     overhead\nStreamStat build (per-msg stats msg)               0.00     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)     3.62     MODEL\nfrom_grid (np grid -> OccupancyGrid)               0.87     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):   6.98 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   1.30 ms\nTOTAL LatentROS CPU+GPU per message:            8.28 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "ws",
+          "decoder": "v2",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 2.7,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 14.41,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 39.9,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 4.69,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 14.41,
+            "decode_ms": 39.9,
+            "model_ms": 54.31,
+            "overhead_ms": 7.4,
+            "total_ms": 61.71
+          },
+          "output": "decoder=v2 trained; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/ubuntu/workspace/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=NVIDIA GeForce RTX 3080 Ti  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     2.70     overhead\n_encode_grid (MODEL encode + pack)                14.41     MODEL\narray.array('B', latent bytes)                     0.01     overhead\nadapters.dumps(meta)  (json)                       0.00     overhead\nStreamStat build (per-msg stats msg)               0.00     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    39.90     MODEL\nfrom_grid (np grid -> OccupancyGrid)               4.69     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  54.31 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   7.40 ms\nTOTAL LatentROS CPU+GPU per message:           61.71 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "ws",
+          "decoder": "v2",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": true,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 2.68,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 13.8,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 39.59,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 4.89,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 13.8,
+            "decode_ms": 39.59,
+            "model_ms": 53.39,
+            "overhead_ms": 7.59,
+            "total_ms": 60.98
+          },
+          "output": "decoder=v2 trained; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/ubuntu/workspace/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=NVIDIA GeForce RTX 3080 Ti  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     2.68     overhead\n_encode_grid (MODEL encode + pack)                13.80     MODEL\narray.array('B', latent bytes)                     0.01     overhead\nadapters.dumps(meta)  (json)                       0.00     overhead\nStreamStat build (per-msg stats msg)               0.00     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    39.59     MODEL\nfrom_grid (np grid -> OccupancyGrid)               4.89     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  53.39 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   7.59 ms\nTOTAL LatentROS CPU+GPU per message:           60.98 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "ws",
+          "decoder": "v4",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 2.46,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 13.71,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.02,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 12.43,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 19.6,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 13.71,
+            "decode_ms": 12.43,
+            "model_ms": 26.14,
+            "overhead_ms": 22.09,
+            "total_ms": 48.23
+          },
+          "output": "decoder=v4 RANDOM WEIGHTS; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/ubuntu/workspace/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=NVIDIA GeForce RTX 3080 Ti  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     2.46     overhead\n_encode_grid (MODEL encode + pack)                13.71     MODEL\narray.array('B', latent bytes)                     0.02     overhead\nadapters.dumps(meta)  (json)                       0.00     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    12.43     MODEL\nfrom_grid (np grid -> OccupancyGrid)              19.60     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  26.14 ms\nNON-MODEL overhead (copies/json/rebuild/stats):  22.09 ms\nTOTAL LatentROS CPU+GPU per message:           48.23 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "ws",
+          "decoder": "v4",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": true,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 2.38,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 13.72,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 12.25,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 4.59,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 13.72,
+            "decode_ms": 12.25,
+            "model_ms": 25.97,
+            "overhead_ms": 6.99,
+            "total_ms": 32.96
+          },
+          "output": "decoder=v4 RANDOM WEIGHTS; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/ubuntu/workspace/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=NVIDIA GeForce RTX 3080 Ti  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     2.38     overhead\n_encode_grid (MODEL encode + pack)                13.72     MODEL\narray.array('B', latent bytes)                     0.01     overhead\nadapters.dumps(meta)  (json)                       0.00     overhead\nStreamStat build (per-msg stats msg)               0.00     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    12.25     MODEL\nfrom_grid (np grid -> OccupancyGrid)               4.59     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  25.97 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   6.99 ms\nTOTAL LatentROS CPU+GPU per message:           32.96 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "agx",
+          "decoder": "v2",
+          "shape": [
+            2560,
+            1920
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 0.75,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 7.15,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 35.55,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 1.36,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 7.15,
+            "decode_ms": 35.55,
+            "model_ms": 42.7,
+            "overhead_ms": 2.15,
+            "total_ms": 44.84
+          },
+          "output": "decoder=v2 trained; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/jason_agx/latentros_racecar/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=Orin  shape=2560x1920 (4.92 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     0.75     overhead\n_encode_grid (MODEL encode + pack)                 7.15     MODEL\narray.array('B', latent bytes)                     0.01     overhead\nadapters.dumps(meta)  (json)                       0.01     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    35.55     MODEL\nfrom_grid (np grid -> OccupancyGrid)               1.36     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  42.70 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   2.15 ms\nTOTAL LatentROS CPU+GPU per message:           44.84 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "agx",
+          "decoder": "v4",
+          "shape": [
+            2560,
+            1920
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 0.77,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 7.12,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 6.48,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 1.39,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 7.12,
+            "decode_ms": 6.48,
+            "model_ms": 13.6,
+            "overhead_ms": 2.2,
+            "total_ms": 15.8
+          },
+          "output": "decoder=v4 RANDOM WEIGHTS; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/jason_agx/latentros_racecar/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=Orin  shape=2560x1920 (4.92 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     0.77     overhead\n_encode_grid (MODEL encode + pack)                 7.12     MODEL\narray.array('B', latent bytes)                     0.01     overhead\nadapters.dumps(meta)  (json)                       0.01     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)     6.48     MODEL\nfrom_grid (np grid -> OccupancyGrid)               1.39     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  13.60 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   2.20 ms\nTOTAL LatentROS CPU+GPU per message:           15.80 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "agx",
+          "decoder": "v2",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 2.97,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 45.91,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.04,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 137.81,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 5.42,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 45.91,
+            "decode_ms": 137.81,
+            "model_ms": 183.72,
+            "overhead_ms": 8.45,
+            "total_ms": 192.17
+          },
+          "output": "decoder=v2 trained; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/jason_agx/latentros_racecar/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=Orin  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     2.97     overhead\n_encode_grid (MODEL encode + pack)                45.91     MODEL\narray.array('B', latent bytes)                     0.04     overhead\nadapters.dumps(meta)  (json)                       0.01     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)   137.81     MODEL\nfrom_grid (np grid -> OccupancyGrid)               5.42     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers): 183.72 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   8.45 ms\nTOTAL LatentROS CPU+GPU per message:          192.17 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "agx",
+          "decoder": "v2",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": true,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 2.93,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 45.9,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.05,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 138.16,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 5.03,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 45.9,
+            "decode_ms": 138.16,
+            "model_ms": 184.06,
+            "overhead_ms": 8.03,
+            "total_ms": 192.1
+          },
+          "output": "decoder=v2 trained; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/jason_agx/latentros_racecar/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=Orin  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     2.93     overhead\n_encode_grid (MODEL encode + pack)                45.90     MODEL\narray.array('B', latent bytes)                     0.05     overhead\nadapters.dumps(meta)  (json)                       0.01     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)   138.16     MODEL\nfrom_grid (np grid -> OccupancyGrid)               5.03     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers): 184.06 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   8.03 ms\nTOTAL LatentROS CPU+GPU per message:          192.10 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "agx",
+          "decoder": "v4",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": false,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 3.07,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 45.62,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.04,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 16.02,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 10.75,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 45.62,
+            "decode_ms": 16.02,
+            "model_ms": 61.65,
+            "overhead_ms": 13.89,
+            "total_ms": 75.53
+          },
+          "output": "decoder=v4 RANDOM WEIGHTS; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/jason_agx/latentros_racecar/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=Orin  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     3.07     overhead\n_encode_grid (MODEL encode + pack)                45.62     MODEL\narray.array('B', latent bytes)                     0.04     overhead\nadapters.dumps(meta)  (json)                       0.01     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    16.02     MODEL\nfrom_grid (np grid -> OccupancyGrid)              10.75     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  61.65 ms\nNON-MODEL overhead (copies/json/rebuild/stats):  13.89 ms\nTOTAL LatentROS CPU+GPU per message:           75.53 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        },
+        {
+          "host": "agx",
+          "decoder": "v4",
+          "shape": [
+            5120,
+            3840
+          ],
+          "repeat": true,
+          "stages": [
+            {
+              "stage": "to_grid  (msg.data -> np grid)",
+              "mean_ms": 3.11,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_encode_grid (MODEL encode + pack)",
+              "mean_ms": 45.8,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "array.array('B', latent bytes)",
+              "mean_ms": 0.06,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.dumps(meta)  (json)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "StreamStat build (per-msg stats msg)",
+              "mean_ms": 0.01,
+              "kind": "overhead"
+            },
+            {
+              "stage": "adapters.loads(meta)  (json)",
+              "mean_ms": 0.0,
+              "kind": "overhead"
+            },
+            {
+              "stage": "_decode_grid (unpack + MODEL decode + rebuild)",
+              "mean_ms": 16.41,
+              "kind": "MODEL"
+            },
+            {
+              "stage": "from_grid (np grid -> OccupancyGrid)",
+              "mean_ms": 5.02,
+              "kind": "overhead"
+            }
+          ],
+          "summary_ms": {
+            "encode_ms": 45.8,
+            "decode_ms": 16.41,
+            "model_ms": 62.21,
+            "overhead_ms": 8.21,
+            "total_ms": 70.42
+          },
+          "output": "decoder=v4 RANDOM WEIGHTS; fp16; torch.compile; 512-row strips; 5 warmups, 30 timed calls\n/home/jason_agx/latentros_racecar/packages/build/latentros/latentros/codec.py:110: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:206.)\n  return self._torch.from_numpy(np.ascontiguousarray(lat)).to(self._fc.dev, self._fc.dtype)\ndevice=Orin  shape=5120x3840 (19.66 MB int8)  depth=3\n\nstage                                                  ms   kind\n--------------------------------------------------------------------------\nto_grid  (msg.data -> np grid)                     3.11     overhead\n_encode_grid (MODEL encode + pack)                45.80     MODEL\narray.array('B', latent bytes)                     0.06     overhead\nadapters.dumps(meta)  (json)                       0.01     overhead\nStreamStat build (per-msg stats msg)               0.01     overhead\nadapters.loads(meta)  (json)                       0.00     overhead\n_decode_grid (unpack + MODEL decode + rebuild)    16.41     MODEL\nfrom_grid (np grid -> OccupancyGrid)               5.02     overhead\n--------------------------------------------------------------------------\nMODEL (encode+decode incl. their transfers):  62.21 ms\nNON-MODEL overhead (copies/json/rebuild/stats):   8.21 ms\nTOTAL LatentROS CPU+GPU per message:           70.42 ms\nRAW ROS baseline (hand msg to rclpy):           ~0 ms extra (DDS serializes msg.data either way)\n"
+        }
+      ]
+    }
+  ]
+}
