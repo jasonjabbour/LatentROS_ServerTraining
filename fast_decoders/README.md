@@ -1,9 +1,10 @@
 # Fast decoders — same compression as v2/v4, lower latency
 
-> **See also `fast_codec/`** — a matched encoder+decoder pair that is 4.8x
-> faster end-to-end (0.501 ms vs v4's 2.395 ms). The decoders here were trained
-> against the **v4 encoder**; do not pair their weights with `fast_codec/`'s
-> encoder, or vice versa.
+> **Superseded by `unified_model_v5/`**, which rebuilds the encoder too and is
+> 5.4x faster end-to-end (0.440 ms vs v4's 2.396 ms) at higher PSNR on all four
+> rates. The decoders here were trained against the **v4 encoder** and remain
+> valid as v4-compatible drop-ins; do not pair their weights with v5's encoder.
+> `ORIN_BENCHMARK.md` in this directory applies to both.
 
 Two trained decoders that keep the codec's exact compression contract while
 cutting decoder latency. The **encoder is v4's `MMEncoder`, unchanged** (49,928
