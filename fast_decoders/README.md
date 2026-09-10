@@ -1,5 +1,10 @@
 # Fast decoders — same compression as v2/v4, lower latency
 
+> **See also `fast_codec/`** — a matched encoder+decoder pair that is 4.8x
+> faster end-to-end (0.501 ms vs v4's 2.395 ms). The decoders here were trained
+> against the **v4 encoder**; do not pair their weights with `fast_codec/`'s
+> encoder, or vice versa.
+
 Two trained decoders that keep the codec's exact compression contract while
 cutting decoder latency. The **encoder is v4's `MMEncoder`, unchanged** (49,928
 params, architecturally identical to v2's), so the latent is `C_lat = input
