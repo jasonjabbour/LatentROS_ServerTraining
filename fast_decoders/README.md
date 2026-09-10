@@ -75,6 +75,12 @@ compression at depths 1/3/6 for both channel counts.
 
 ## Caveats
 
+- **Validated on torch 2.5.1+cu121 only.** `fullgraph=True` compilation
+  behaviour shifts between torch versions, and the reported latencies all used
+  `torch.compile`. The architectures are faster in eager mode too (1.54x and
+  2.10x vs v4 on H200), so a working inductor/Triton backend is not required —
+  it roughly doubles the advantage where available. See ORIN_BENCHMARK.md for
+  running these on Jetson, where Triton is unreliable.
 - **Weights are final-epoch, not best-epoch.** The search harness validates only
   at the end of training. On the v4 reference run, final was 0.19 dB below best.
 - **Latency is H200/A100, not Orin.** The deployment target is a Jetson, and
